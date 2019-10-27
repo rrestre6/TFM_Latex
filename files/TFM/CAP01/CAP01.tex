@@ -1,0 +1,47 @@
+El estudio del Sol y su interacción con la Tierra ha sido motivo de debates científicos en la astrofísica moderna~\cite{2008VitaFinzi}. La interacción Sol-Tierra tiene implicaciones directas en la vida humana y en el desarrollo de la sociedad~\cite{2013Collins}, por tanto, entender dichas implicaciones parte por comprender los fenómenos que se presentan en la evolución y dinámica Solar. Las hipótesis de estudio vienen dadas por las diferentes aproximaciones de la física, desde la mecánica clásica hasta la mecánica cuántica, pasando por la física moderna~\cite{2006Lang, 2008Lang}, sin embargo, es la corroboración observacional lo que permite descartar o continuar con las hipótesis plateadas. 
+
+La instrumentación científica para la observación y comprensión del cosmos ha avanzado en los últimos 50 años mas que en toda la historia de la humanidad, con proyectos espaciales como el Hubble Space Telescope (HST)~\cite{www:HST}, el Jammes Webb Space Telescope (JWST)~\cite{www:JWST}, Global Astrometric Interferometer for Astrophysics (GAIA)~\cite{www:GAIA} o Solar Dynamics Obserbatory (SDO)~\cite{www:SDO} y terrestres como Atacama Large Millimiter Array (ALMA)~\cite{www:ALMA}, Very Large Telescope (VLT)~\cite{www:VLT} o European Solar Telescope (EST)~\cite{www:EST}, por mencionar solo algunos. Estos proyectos de gran envergadura y con unas prestaciones técnicas que alcanzan en ocasiones la vanguardia tecnología, tienen como principal motivación mover las fronteras del conocimiento, razón por la cual los costos de fabricación, funcionamiento y mantenimiento son elevados.  Por lo general, con estos instrumentos no es posible hacer mediciones continuadas durante mucho tiempo, ya sea por las condiciones de funcionamiento y operación o por la ocupación de los mismos.
+
+En el caso de Sol, las observación continuadas en periodos de tiempo extensos, donde las prestaciones instrumentales no sean excesivamente exigentes, a un relativo bajo costo, han sido anheladas por los físicos solares desde hace tiempo. Pero no solo los físicos solares han deseado esto,  para las compañías que operan  sistemas satelitales de algún tipo, entender la actividad solar les permitiría anticiparse en la protección de los equipos ante la llegada de \textit{tormentas geomagnéticas}. La Fig.~\ref{fig:efectosTierra} presenta una recreación gráfica de los efectos adversos de las \textit{tormentas geomagnéticas} en la tecnologías necesarias para la actividad humana actual.
+
+\begin{figure}
+	\centering
+	%Ruta
+	\includegraphics[width=0.8\textwidth]{./files/TFM/CAP01/figures/efectosTierra.png}
+	% caption
+	\caption[]{Efectos adversos de las \textit{tormentas geomagnéticas} en la Tierra~\cite{2013Collins}}
+	\label{fig:efectosTierra}
+\end{figure}
+
+El proyecto Solar Activity Monitor NETwork (SAMNet)~\cite{www:SAMNet} dirigido por la Fundación Húngara de Física Solar , tiene como objetivo estudiar las fulguraciones solares, principalmente, aquellas denominadas tipo X, estas emiten radiación de alta energía a altas velocidades, las partículas expulsadas pueden colisionar con el campo magnético terrestre, lo cual, produce fenómenos físicos impresionantes como las auroras boreales o crear anomalías en la ionosfera que son las denominadas \textit{tormentas geomagnéticas}. Parte del objetivo del proyecto es utilizar instrumentos de bajo costo, lo que implica obtener información con menos resolución espacial, desde múltiples sitios sobre la superficie terrestre, entre los sitios de interés están aquellos ubicados donde el rango entre el alba y el ocaso sea máximo a lo largo de año y esto ocurre en el ecuador terrestre.
+
+En la literatura reciente~\cite{2015ApJ...802L..21K, 2019JSWSC...9A...6K}, se han desarrollado modelos predictivos de la formación de fulguraciones, estos trabajos se basan en la premisa de dependencia entre las regiones activas magnéticamente bipolares y la formación de dichas fulguraciones solares. Las variables de interés analizadas son: las áreas y magnitud media del campo magnético en las umbras de las manchas solares de las regiones con polaridad opuesta. Con esta información se estima la distancia entre los baricentros de las zonas que son magnéticamente opuestas, el cual, es el parámetro principal de predicción. La Fig.~\ref{fig:camposBipolares} muestra una representación del proceso de formación de una fulguración solar asociada al cambio en la distancia de manchas con polaridad opuesta ocurriendo en una región activa.
+
+\begin{figure}
+	\centering
+	%Ruta
+	\includegraphics[width=0.6\textwidth]{./files/TFM/CAP01/figures/camposBipolares.png}
+	% caption
+	\caption[]{Formación de fulguraciones debido al cambio en la distancia de las manchas con polaridad opuesta, Adaptado de~\cite{2019JSWSC...9A...6K} en~\cite{man:2019Granados}}
+	\label{fig:camposBipolares}
+\end{figure}
+
+La información de entrada para el calculo de los baricentros son los magnetogramas y estos son obtenidos a partir de modelos matemáticos de inversión de los parámetros de Stokes~\cite{2003ToroIniesta}, los cuales a su vez, son obtenidos por los verdaderos parámetros observables para telescopios en el rango de las longitudes de onda entre el visible y el infrarrojo cercano, parámetros que son medidas de intensidad lumínica en diferentes estados de polarización del campo eléctrico.  
+
+La adquisición de las imágenes desde telescopios ubicados en tierra se verán afectadas por el \textit{seeing} atmosférico y por las aberraciones propias del sistema óptico~\cite{2010Schmidt}, perdiendo éstas, calidad e información asociada a las altas frecuencias, más aún si el telescopio esta ubicado en la franja ecuatorial terrestre como se propone en el proyecto SAMNet, donde las turbulencias atmosféricas suelen ser mayores a los telescopios ubicados en latitudes mas lejanas. 
+
+\section{Objetivos}
+\label{sec:objetivos}
+Por tanto, este trabajo de fin de máster, tiene como objetivo principal, \textbf{determinar vía simulación, los efectos negativos de las turbulencias atmosféricas terrestres sobre los parámetros de Stokes usados para el calculo del campo magnético solar}, en una ubicación especifica del ecuador terrestre, localizada en Colombia y con los siguientes objetivos específicos:
+
+\begin{enumerate}
+	\item Encontrar vía simulación con la metodología Large Eddy Simulation (LES), el parámetro estructural de índice de refracción.
+	\item Simular la propagación de un campo de luz (imágenes del sol sin atmósfera terrestre extraídas de SDO) a través de la atmósfera terrestre usando el parámetro estructural de índice de refracción encontrado y un telescopio ideal de apertura menor a 0.5 m, usando la teoría clásica de propagación de la luz en medios inhomogéneos.
+	\item Reconstruir los parámetros de Stokes a partir de las imágenes obtenidas de propagar la luz polarizada a través de la atmósfera terrestre.
+	\item Comparar los resultados obtenidos contra los parámetros de Stokes entregados por SDO.
+\end{enumerate}
+
+\section{Estructura del documento}
+\label{sec:estDoc}
+Este trabajo esta dividido en 5 capítulos. El Capítulo actual, que introduce al problema planteado y a los objetivos a resolver. El Capítulo~\ref{chapter:02} muestra el procedimiento para calcular el parámetro estructural de indice de refracción usando LES, con el programa de acceso libre~\cite{2015GMDD....8.1539M, soft:PALM} \footnote{Sistema de modelado meteorológico avanzado y moderno para la simulación de flujos de capa limite atmosférica y oceánica.}. El Capítulo~\ref{chapter:03} desarrolla la teoría clásica de propagación de la luz en medios inhomogéneos, con el fin de encontrar el Point Spread Function (PSF) que caracterice la atmósfera, y así encontrar las imágenes necesarias para reconstruir los parámetros de Stokes. En el Capítulo~\ref{chapter:04} se introduce la espectro-polarimetría solar y se hace un análisis sobre los resultados obtenidos. Por ultimo, En el Capítulo~\ref{chapter:04} se presentan las conclusiones y el trabajo futuro. 
+ 

@@ -1,0 +1,90 @@
+
+La atmósfera puede ser interpretada como un medio inhomogéneo, no magnético e isotrópico y la fuente de su inhomogeneidad esta relacionada con los cambios en el indice de refracción ($n$)~\cite{goodman, schimidt}. También, puede considerarse que el indice de refracción de la atmósfera es cercano a la unidad. Estas consideraciones permiten hacer pequeñas variaciones en las técnicas computacionales para el calculo de la propagación de la luz en el vacío. Sin embargo, como se ha dicho en el Capítulo~\ref{chapter:02}, $n$ varia de forma aleatoria tanto en el tiempo como en el espacio y debe ser tratado desde la perspectiva de la óptica estadística~\cite{goodman}. Como resultado de estos cambios aleatorios, se produce un efecto negativo en la formación de imagen, debido a que la luz se distorsiona de forma aleatoria limitando la resolución de los telescopios.
+
+Bajo las premisas mencionadas, nos limitaremos a estudiar $n$ asumiendo cambios pequeños ($\delta n$), tal que, $\delta n = n - 1$ y con ello, en la siguiente subsección, desarrollaremos el algoritmo de propagación de la luz, el cual esta basado en el algoritmo ampliamente conocido de espectro angular~\cite{Schmidt}.Los cambios en el indice de refracción, desde un punto de vista matemático, introduce cambios aleatorios de fase en el campo eléctrico, lo que nos permite formular la teoría de Rytov~\cite{rytov}, la cual, es una teoría de perturbaciones que usa las ecuaciones de Maxwell para obtener unas propiedades estadísticas en el plano de observación del campo óptico~\cite{goodman, schimidt}. Los parámetros estadísticos como las varianzas, correlaciones y espectros de densidad, de propiedades como la amplitud-logarítmica, fase e irradiancia son usadas para generar mascaras aleatorias, las cuales a su vez, son entradas para el algoritmo de propagación. Así que principalmente, este Capitulo muestra un modelo de atmósfera por capas siguiendo unos parámetros estadísticos determinados previamente.
+
+Empezaremos por describir el algoritmo de propagación, luego, mostraremos la relación entre las variables estadísticas encontradas para la atmósfera simulada en el Capitulo~\ref{chapter:02}, las cuales, nos servirán para hacer un modelo de capas de la atmósfera usando máscaras de fase aleatorias calculadas a través de un modelo sencillo de Monte-Carlo. Las mascaras computadas son la entrada principal del algoritmo.
+
+\vspace{-0.5cm}
+\section{Algoritmo de espectro angular para la propagación de la luz en la atmósfera}
+\label{sec:1cap3}
+\vspace{-0.2cm}
+En la teoría escalar de la difracción, explicada con rigor físico y matemático por~\cite{goodmanFO}, en \emph{Introduction to Fourier Optics}, la propagación en campo cercano esta definida por la integral de Fresnel y es el tratamiento de esta transformación, la que permitirá plantar la propagación de la luz a través de la atmósfera. Supongamos un campo óptico de entrada escrito de forma fasorial, $U(\mathbf{r}_1)=A(\mathbf{r}_1)$exp$[-i\phi(\mathbf{r}_1)]$, que va siendo transformado a medida que atraviesa cada pequeña sección transversal de la atmósfera, tal que, $U(\mathbf{r}_{i+1})=A(\mathbf{r}_{i+1})$exp$[-i\phi(\mathbf{r}_{i+1})]$. La transformación entonces esta dada por
+\begin{equation}\label{eq:prop1}
+U(\mathbf{r}_{i+1})\simeq \mathcal{R}\Big[\frac{\Delta z_i}{2}, \mathbf{r}_i, \overline{\mathbf{r}}_{i+1} \Big] \mathcal{T}[z_i, z_{i+1}] \mathcal{R}\Big[\frac{\Delta z_i}{2}, \mathbf{r}_i, \overline{\mathbf{r}}_{i+1} \Big]\{U(\mathbf{r}_i)\},
+\end{equation}
+donde, $\mathcal{R}[.]$ y $\mathcal{T}[.]$ son operadores que representan la difracción en el espacio libre y la acumulación de fase debido a la atmósfera, respectivamente. $\overline{\mathbf{r}}_{i+1}$ es la coordenada a medio camino entre el plano $i$ y $i+1$. Expandiendo la Eq.~\ref{eq:prop1} en la notación de~\cite{Nazarathy} obtenemos 
+\begin{align}\label{eq:prop2}
+U(\mathbf{r}_{n}) =& \mathcal{Q}\Big[\frac{m_{n-1}-1}{m_{n-1}\Delta z_{n-1}}, \mathbf{r}_n \Big] \\
+ & \times \prod_{i=1}^{n-1} \Big\{\mathcal{T}[z_i, z_{i+1}] \mathcal{F}^{-1}\Big[\mathbf{f}_i, \frac{\mathbf{r}_{i+1}}{m_i} \Big] \mathcal{Q}_2\Big[-\frac{\Delta z_i}{m_i}, \mathbf{f}_i \Big]\mathcal{F}[\mathbf{r}_i, \mathbf{f}_i]\frac{1}{m_i} \Big\} \nonumber \\ 
+ & \times \Big\{ \mathcal{Q}\Big[\frac{1-m_1}{\Delta z_1}, \mathbf{r}_1 \Big] \mathcal{T}[z_1, z_2] U(\mathbf{r}_1)\Big\}. \nonumber
+\end{align}
+La Eq.~\ref{eq:prop2} esta en términos de transformadas de Fourier ($\mathcal{F}, \mathcal{F}^{-1}$) y operadores que contienen fases cuadráticas ($\mathcal{Q}[c,\mathbf{r}]\{U(\mathbf{r})\}=e^{i(k/2)c|\mathbf{r}|^2}U(\mathbf{r}), \mathcal{Q}_2 [d,\mathbf{r}]= \mathcal{Q}[(4\pi^2/k^2)d, \mathbf{r}]$). El subindice $n$ representa el numero de planos de propagación y la acumulación de fase esta definida como
+\begin{equation}\label{eq:faseacumulada}
+\mathcal{T}[z_i, z_{i+1}] = \textrm{exp}[-i\phi(\mathbf{r}_{i+1})],
+\end{equation}
+donde, la fase $\phi$ esta definida a través del cambio en el indice de refracción $\delta n$, como
+\begin{equation}\label{eq:fase}
+\phi(\mathbf{r}_i) = k \int_{z_{i}}^{z_{i+1}}\delta n(\mathbf{r}_i)dz.
+\end{equation}
+En la aproximación de Rytov~\cite{goodman, schimidt}, el campo óptico esta definido como $U(\mathbf{r})=U_0(\mathbf{r})\textrm{exp}[\psi(\mathbf{r})]$, donde, $U_0(\mathbf{r})$ representa la solución de las ecuaciones de Maxwell para el vacío ($n_1=0$) y $\psi(\mathbf{r})$ es la perturbación de fase compleja, la cual, sigue la forma $\psi(\mathbf{r})=\psi_1(\mathbf{r})+\psi_2(\mathbf{r})+...$, con realizaciones sucesivas de perturbación, caracterizadas por varios momentos estadísticos. Adicionalmente, $\psi$ puede ser escrita en términos de amplitud y fase ($\psi=\mathcal{X}+i\phi$). $\mathcal{X}$ es la perturbación de amplitud-logarítmica y $\phi$ como se dijo, es la perturbación de fase. El metodo de Rytov puede ser construido a partir de un modelo \emph{Power Spectrum Density} (PSD - $\Phi$), con el cual calcular analíticamente los momentos estadísticos del campo óptico.
+\section{Definición de  $\Phi_{n}$ y $\Phi_{\phi}$}
+\label{sec:2cap3}
+Siguiendo la teoría de Kolmogorov~\cite{ref:kolmogorov}, explicada brevemente en el Capítulo~\ref{chapter:02}, la descripción espectral de las fluctuaciones del índice de refracción, puede ser interpretada a través de su PSD ($\Phi_{n}(\kappa)$), la cual es calculada usando la función estructural de indice de refracción ($D_n(r)$)~\cite{ref:ref15Schmidt}. Un modelo practico de la PSD de indice de refracción basada en la teoría de Kolmogorov y modificada por Von Kármán~\cite{ref:ref15Schmidt} viene dada por
+\begin{equation}\label{eq:PSDn}
+\Phi_{n}(\kappa) = 0.033C_{n}^{2}\frac{\textrm{exp}(-\kappa^2/\kappa_{m}^{2})}{(\kappa^2+\kappa_{0}^{2})^{(11/6)}}, \quad 0\leq\kappa<\infty,
+\end{equation}
+con $\boldsymbol\kappa = 2\pi(f_x\hat{\mathbf{i}}+f_y\hat{\mathbf{j}})$ como la frecuencia espacial angular, $\kappa_m=5.92/l_0$ y $\kappa_0=2\pi/L_0$. El modelo de Von Kármán modificado esta diseñado para tener en cuenta escalas mas pequeñas y mas grandes de Eddies que el modelo estándar de Kolmogorov. Nótese que el parámetro estructural de indice de refracción ($C_{n}^{2}$) es necesario para construir su PSD. La relación entre los parámetros que definen el indice de refracción y la fase, puede escribirse a traves de sus PSDs como
+\begin{equation}\label{eq:PSDf}
+\Phi_{\phi}(\kappa) = 2\pi^2k^2\Delta z\Phi_{n}(\kappa),
+\end{equation}
+resolviendo, se obtiene
+\begin{equation}\label{eq:PSDf2}
+\Phi_{\phi}(\kappa) = 0.49r_{0}^{(-5/3)}\frac{\textrm{exp}(-\kappa^2/\kappa_{m}^{2})}{(\kappa^2+\kappa_{0}^{2})^{(11/6)}},
+\end{equation}
+donde $r_0$ es el radio de coherencia atmosférico o parámetro de Fried~\cite{ref:Schmidt, fried} y $\Delta z$ es la distancia de propagación. El parámetro de Fried depende de la forma de la onda propagada, para un frente de onda esférico $r_0$ esta dado por
+\begin{equation}\label{eq:r0p}
+r_{0,sw}=\Big[0.423k^2\int_{0}^{\Delta z}C_{n}^{2}(z)\Big(\frac{z}{\Delta z}\Big)^{(5/3)}dz\Big]^{(-3/5)}.
+\end{equation}
+Para el caso de un frente de onda plano, el termino de divergencia de la onda ($(z/\Delta z)^{(5/3)}$) desaparece de la Eq.~\ref{eq:r0p}. El parámetro de Fried, físicamente hablando, es la medida de la calidad de transmisión óptica a través de la atmósfera. 
+
+\section{Cálculo de las máscaras de fase usando PSDs}\label{sec:3cap3}
+Como se ha dicho, las variaciones aleatorias en el indice de refracción producen cambios en el camino óptico de la luz, también aleatorios. Por tanto, el objetivo es crear mascaras de fase que produzcan cambios aleatorios en la propagación de la luz que sigan la estadística de la atmósfera estudiada, las cuales servirán, como fue mencionado antes, de entrada en el algoritmo de propagación de la luz. Es decir, que las turbulencias atmosféricas producen variaciones de fase que deben ser representadas por números aleatorios generados por ordenador con una estadística propia definida a través de las PSDs. La fase puede ser escrita como la sumatoria ponderada de unas funciones base. Usando la transformada de Fourier, podemos escribir la fase como
+\begin{equation}\label{eq:faseFourier}
+\phi(x,y)=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\Psi(f_x,f_y)e^{i2\pi(f_xx+f_yy)}df_xdf_y,
+\end{equation}
+donde, $\Psi(f_x,f_y)$ es la representación de la fase en el domino espacio-frecuencial. Entendiendo la fase como una realización de un proceso aleatorio con una PSD dada por $\Phi_{\phi}(\kappa)$ o $\Phi_{\phi}(f)$ y usando el terorema de Parseval, mas la definición de PSD~\cite{schmitd} obtenemos la siguiente relación
+\begin{equation}\label{eq:fasePSD_Rel}
+\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\Phi_{\phi}(f_x,f_y)df_xdf_y=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\lvert\phi(x,y)\lvert^2dxdy,
+\end{equation}
+Ahora, usando la Eq.~\ref{eq:faseFourier} de forma discreta para poder ser computada, esta se convierte en una serie de Fourier donde el conjunto de los coeficientes son la variable de interés para construir la fase aleatoria. Para determinar los coeficientes se utilizara el teorema de limite central, con el cual obtener una distribución Gaussiana~\cite{schmitd}. La razón principal de este razonamiento, es que las variaciones de fase a través de la atmósfera tiene muchas inhomogeneidades aleatorias independientes a lo largo del camino óptico. Tal que, los coeficientes pueden ser escritos usando la Eq.~\ref{eq:faseFourier} y la Eq.~\ref{eq:fasePSD_Rel} en su forma discreta, como
+\begin{equation}\label{eq:cnm}
+\Big \langle \lvert c_{n,m} \lvert^{2} \Big \rangle = \frac{1}{L_{x}L_{y}}\Phi_{\phi}(f_{x_n},f_{y_m}),
+\end{equation}
+siendo $f_{x_n}$ y $f_{y_m}$ las frecuencias espaciales discretizadas y $L_x$ y $L_y$ el espaciado de la malla en representación frecuencial. $c{n,m}$ son los coeficientes de Fourier complejos y tanto su parte real como imaginaria tiene una media de cero, las varianzas son iguales y las covarianzas cruzadas son cero. Una vez obtenidos los coeficientes, computacionalmente hablando, la parte real de la transformada de Fourier de estos, es la fase aleatoria buscada. Sin embargo, este método no reproduce de forma precisa las frecuencias bajas del modelo modificado de Von Kármán, por tanto hay que introducir una corrección, basado en la reconstrucción de subarmónicos~\cite{ref78scmithlane}, donde se hace una suma adicional, para hacer un promedio de varias mascaras de fase aleatorias, solo alrededor de las frecuencias bajas. 
+
+La fase para bajas frecuencias esta dada por
+\begin{equation}\label{eq:faseLF}
+\phi_{LF}(x,y)=\sum_{p=1}^{N_p}\sum_{n=-1}^{1}\sum_{m=-1}^{1} c_{n,m}\textrm{exp}[i2\pi(f_{x_n}x+f_{y_m}y)],
+\end{equation}
+donde, $N_p$ es la suma sobre diferentes mascaras de fase. La definicion de la fase para las altas frecuencias tiene la misma forma de la Eq.~\ref{eq:faseLF}, pero sin la sumatoria sobre $N_p$ y con $n$ y $m$ del tamaño total de la mascara, es decir, para el tamaño total de las frecuencias analizadas. Finalmente, la fase total es la suma de la fase para las altas frecuencias mas la fase para las bajas frecuencias.
+
+\section{Función de transferencia óptica (OTF) y función de punto esparcido (PSF)}\label{sec:4cap3}
+Retomando la teoría Rytov~\cite{refSchmitsobreRytov} que ha sido introducida al inicio de este Capitulo, el valor promedio de un campo óptico esta definido como
+\begin{equation}\label{eq:promCampoOptico}
+\langle U(\mathbf{r})\rangle =U_0(\mathbf{r})\langle \textrm{exp}[\psi(\mathbf{r})] \rangle.
+\end{equation}
+A partir de la Eq.~\ref{eq:promCampoOptico}, se puede definir la función de coherencia mutua, la cual nos indica, el grado de coherencia de la luz de un campo óptico y tiene un rol importante en la interpretación de la transformación de los campos ópticos parcialmente coherentes, a través de los sistemas ópticos formadores de imagen~\cite{goodman}. La función de coherencia mutua tiene la siguiente forma
+\begin{equation}\label{eq:Cohmutua}
+\Gamma(\mathbf{r},\mathbf{r'},z)=U_0(\mathbf{r})U_{0}^{*}(\mathbf{r'})\langle \textrm{exp}[\psi(\mathbf{r})\psi^{*}(\mathbf{r'})] \rangle.  
+\end{equation}
+La función de coherencia mutua permite calcular propiedades útiles para la caracterización de la propagación de la luz. Estas propiedades son el factor modulo complejo de coherencia, la función estructural de onda, la PSD de la fase y la OTF del sistema~\cite{goodman, schmith}. Para el modelo de atmósfera que se viene analizando, el factor modulo complejo de coherencia esta definido como 
+\begin{equation}\label{eq:FCM}
+\mu(\mathbf{r},\mathbf{r'},z)=\frac{\lvert\Gamma(\mathbf{r},\mathbf{r'},z)\lvert}{[\Gamma(\mathbf{r},\mathbf{r},z)\Gamma(\mathbf{r'},\mathbf{r'},z)]^{(1/2)}}.
+\end{equation}
+Por otro lado, la OTF esta definida después de un cambio de coordenadas, de la misma forma que el factor modulo complejo de coherencia
+\begin{equation}\label{eq:OTF}
+\mathcal{H}(f)=\frac{\Gamma(\lambda f_l f)}{\Gamma(0)},
+\end{equation}
+donde, $f_l$ es la focal del sistema, $\lambda$ la longitud de onda y $f$ las coordenadas frecuenciales. Finalmente, como es bien sabido, la PSF del sistema óptico incluidas las turbulencias atmosféricas es la transformada de Fourier de la OTF~\cite{goodmanFO}.
+\section{Resultados}

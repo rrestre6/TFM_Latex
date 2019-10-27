@@ -1,0 +1,149 @@
+
+\tiny
+\begin{lstlisting}[caption={Fichero de configuración de PALM para la atmósfera de Villa de Leyva}, captionpos=b, label=list_PALManexo1]
+&initialization_parameters
+!
+!-- grid parameters
+!------------------------------------------------------------------------------
+   nx                         = 39, 
+   ny                         = 39, 
+   nz                         = 50, 
+
+   dx                         = 50.0, 
+   dy                         = 50.0, 
+   dz                         = 25.0, 
+
+   dz_stretch_level           = 2215.0, ! Altura villa de leyva
+   dz_max                     = 50
+!
+!-- initialization
+!------------------------------------------------------------------------------
+   initializing_actions       = 'set_constant_profiles',
+
+   ug_surface                 = 2.5, 
+   vg_surface                 = 0.0,
+
+   pt_surface                 = 306.0,
+   pt_vertical_gradient       =    0.0,  3.0,   0,
+   pt_vertical_gradient_level = 0.0,  800,  1600,
+
+   q_surface                  = 0.019, ! mixing ratio --> rel. hum. = ?
+
+   surface_pressure           = 1016.0,
+
+   day_of_year_init           = 172, ! June 21
+   time_utc_init              = 43200.0, ! 12:00 UTC
+!
+!-- physics
+!------------------------------------------------------------------------------
+   latitude                   = 5.66,
+   longitude                  = 286.46,  ! -73.54  villa de leyva
+!
+!-- boundary conditions
+!------------------------------------------------------------------------------
+   constant_flux_layer        = .TRUE.,
+
+
+   bc_pt_b                    = 'dirichlet', ! required when using LSM
+   bc_q_b                     = 'dirichlet', ! required when using LSM
+
+   rayleigh_damping_height    = 138.0,
+   rayleigh_damping_factor    = 0.01,
+!
+!-- mode
+!------------------------------------------------------------------------------
+   humidity                   = .TRUE., 
+   !precipitation              = .FALSE.,
+
+   reference_state            = 'horizontal_average',
+!
+!-- numerics
+!------------------------------------------------------------------------------
+   fft_method                 = 'temperton-algorithm', !'fftw', !
+/
+
+&runtime_parameters
+!
+!-- run steering
+!------------------------------------------------------------------------------
+   end_time                   = 216000.0, ! 2.5 days
+
+   create_disturbances        = .T.,
+   dt_disturb                 = 120.0, 
+   disturbance_energy_limit   = 0.0001,
+!
+!-- general output setting
+!------------------------------------------------------------------------------
+   netcdf_data_format         = 2, ! NetCDF3
+   dt_run_control             = 900.0,
+   dt_data_output             = 21600.0, ! 6 hours
+   dt_data_output_av          = 3600.0,
+   averaging_interval         = 1800.0,
+!
+!-- profile output setting
+!------------------------------------------------------------------------------
+   data_output_pr             = '#u', '#v', '#theta', '#q', '#thetav', 
+                                '#km', '#kh', '#l', 
+                                'w', 'e', 'e*', 'p', 
+                                'w"u"', 'w*u*', 'w"v"', 'w*v*',
+                                'w"theta"', 'w*theta*', 'w"thetav"', 'w*thetav*', 
+                                'w"q"', 'w*q*', 'w*e*',
+                                'theta*2', 'q*2', 'u*2', 'v*2', 'w*2',
+                                '#t_soil', '#m_soil',
+!
+!-- 2D and 3D output setting
+!------------------------------------------------------------------------------
+   section_xy                 = 0, ! surface variables only 
+
+   data_output                = 'theta', 'thetav', 'q', 'u', 'v', 
+                                'theta_av', 'thetav_av', 'q_av', 'u_av', 'v_av', 
+
+                                't_soil',  't_soil_av', 
+                                'm_soil',  'm_soil_av',
+
+                                'us*_xy',   'us*_xy_av', 
+                                't*_xy',   't*_xy_av', 
+                                'r_a*_xy', 'r_a*_xy_av',
+                                'r_s*_xy', 'r_s*_xy_av',
+                                'tsurf*_xy', 'tsurf*_xy_av'
+
+                                'ghf*_xy', 'ghf*_xy_av', 
+                                'shf*_xy', 'shf*_xy_av', 
+
+                                'qsws_liq*_xy',  'qsws_liq*_xy_av',
+                                'qsws_soil*_xy', 'qsws_soil*_xy_av',
+                                'qsws_veg*_xy',  'qsws_veg*_xy_av',
+
+                                'c_liq*_xy',  'c_liq*_xy_av',
+                                'c_soil*_xy', 'c_soil*_xy_av',
+                                'c_veg*_xy',  'c_veg*_xy_av',
+/
+
+&land_surface_parameters
+!
+!-- soil setup
+!------------------------------------------------------------------------------
+   soil_type                  = 3,
+   soil_temperature           = 293.0, 293.0, 293.0, 293.0, 
+                                293.0, 293.0, 293.0, 293.0,
+   deep_soil_temperature      = 293.0,
+   soil_moisture              = 0.35,  0.35,  0.35,  0.35,  
+                                0.35,  0.35,  0.35,  0.35, 
+!
+!-- boundary conditions
+!------------------------------------------------------------------------------
+   surface_type               = 'vegetation',
+   vegetation_type            = ???, 
+   vegetation_coverage        = ???,
+   c_surface                  = 0.0,
+   conserve_water_content     = .T.,
+/
+
+&radiation_parameters
+!
+!-- general setup
+!------------------------------------------------------------------------------
+   radiation_scheme           = 'clear-sky',
+   dt_radiation               = 60.0, 
+/
+\end{lstlisting}

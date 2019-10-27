@@ -1,0 +1,66 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: TFM_RRestrepo.aux
+The style file: ./sty/astron.bst
+Database file #1: ./files/Biblio/Bib.bib
+Warning--I didn't find a database entry for "ref"
+Warning--I didn't find a database entry for "refSantaCRuz"
+Warning--I didn't find a database entry for "tesisSudafrica"
+Warning--I didn't find a database entry for "ref:goodman"
+Warning--I didn't find a database entry for "1998Andreas"
+Warning--I didn't find a database entry for "2000Frederickson"
+Warning--I didn't find a database entry for "2012WilsonFedorovich"
+Warning--I didn't find a database entry for "www:ideam"
+Warning--I didn't find a database entry for "presentacionPALMbeggin"
+Warning--I didn't find a database entry for "librodeLES"
+Warning--empty year in www:EST
+Warning--empty year in www:GAIA
+Warning--empty year in www:ALMA
+Warning--empty year in www:VLT
+Warning--empty year in www:SAMNet
+Warning--empty year in www:HST
+Warning--empty year in www:SDO
+Warning--empty year in soft:PALM
+Warning--empty year in www:JWST
+You've used 19 entries,
+            2251 wiz_defined-function locations,
+            593 strings with 6044 characters,
+and the built_in function-call counts, 5442 in all, are:
+= -- 516
+> -- 206
+< -- 16
++ -- 66
+- -- 66
+* -- 448
+:= -- 1021
+add.period$ -- 0
+call.type$ -- 19
+change.case$ -- 109
+chr.to.int$ -- 19
+cite$ -- 28
+duplicate$ -- 239
+empty$ -- 358
+format.name$ -- 85
+if$ -- 1009
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 17
+newline$ -- 86
+num.names$ -- 57
+pop$ -- 136
+preamble$ -- 1
+purify$ -- 128
+quote$ -- 0
+skip$ -- 164
+stack$ -- 0
+substring$ -- 256
+swap$ -- 41
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 100
+warning$ -- 9
+while$ -- 41
+width$ -- 0
+write$ -- 200
+(There were 19 warnings)

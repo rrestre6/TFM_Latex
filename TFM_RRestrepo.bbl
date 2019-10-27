@@ -1,0 +1,97 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\astroncite{{Collins}}{2013}]{2013Collins}
+{Collins}, C.: 2013,
+\newblock {\em {Astronomy 101: From the Sun and Moon to Whormholes and
+  Warpdrive, Key Theories, Discoveries, and Facts about the Universe}},
+\newblock USA: Adams Media.
+
+\bibitem[\protect\astroncite{EAST-EST}{}]{www:EST}
+EAST-EST,
+\newblock {\em European Solar Telescope: \url{http://www.est-east.eu/}}
+
+\bibitem[\protect\astroncite{ESA-GAIA}{}]{www:GAIA}
+ESA-GAIA,
+\newblock {\em Global Astrometric Interferometer for Astrophysics:
+  \url{https://sci.esa.int/web/gaia}}
+
+\bibitem[\protect\astroncite{ESO-ALMA}{}]{www:ALMA}
+ESO-ALMA,
+\newblock {\em Atacama Large Millimiter Array:
+  \url{https://www.almaobservatory.org/}}
+
+\bibitem[\protect\astroncite{ESO-VLT}{}]{www:VLT}
+ESO-VLT,
+\newblock {\em Very Large Telescope:
+  \url{https://www.eso.org/public/teles-instr/paranal-observatory/vlt/}}
+
+\bibitem[\protect\astroncite{Granados-Hern{\'a}ndez}{2019}]{man:2019Granados}
+Granados-Hern{\'a}ndez, N.: 2019,
+\newblock {\em {An{\'a}lisis de Centroides de Polaridad Magn{\'e}tica en
+  Regiones Solares Activas}},
+\newblock Observatorio Astron{\'o}mico Nacional. Universidad Nacional de
+  Colombia.
+
+\bibitem[\protect\astroncite{HSPF-SAMNet}{}]{www:SAMNet}
+HSPF-SAMNet,
+\newblock {\em Solar Activity Monitor NETwork:
+  \url{http://hspf.eu/samnet.html}}
+
+\bibitem[\protect\astroncite{{Kors{\'o}s} et al.}{2015}]{2015ApJ...802L..21K}
+{Kors{\'o}s}, M.~B., {Ludm{\'a}ny}, A., {Erd{\'e}lyi}, R., y {Baranyi}, T.:
+  2015,
+\newblock {\em \apjl} {\bf 802(2)}, L21
+
+\bibitem[\protect\astroncite{{Kors{\'o}s} et al.}{2019}]{2019JSWSC...9A...6K}
+{Kors{\'o}s}, M.~B., {Yang}, S., y {Erd{\'e}lyi}, R.: 2019,
+\newblock {\em Journal of Space Weather and Space Climate} {\bf 9}, A6
+
+\bibitem[\protect\astroncite{{Lang}}{2006}]{2006Lang}
+{Lang}, K.~R.: 2006,
+\newblock {\em {Sun, Earth and Sky}},
+\newblock 2nd. Springer.
+
+\bibitem[\protect\astroncite{{Lang}}{2008}]{2008Lang}
+{Lang}, K.~R.: 2008,
+\newblock {\em {The Sun from Space}},
+\newblock 2nd. Springer.
+
+\bibitem[\protect\astroncite{{Maronga} et al.}{2015}]{2015GMDD....8.1539M}
+{Maronga}, B., {Gryschka}, M., {Heinze}, R., {Hoffmann}, F.,
+  {Kanani-S{\"u}hring}, F., {Keck}, M., {Ketelsen}, K., {Letzel}, M.~O.,
+  {S{\"u}hring}, M., y {Raasch}, S.: 2015,
+\newblock {\em Geoscientific Model Development Discussions} {\bf 8}, 1539
+
+\bibitem[\protect\astroncite{NASA-HST}{}]{www:HST}
+NASA-HST,
+\newblock {\em Hubble Space Telescope: \url{https://hubblesite.org/}}
+
+\bibitem[\protect\astroncite{NASA-SDO}{}]{www:SDO}
+NASA-SDO,
+\newblock {\em Solar Dynamics Obserbatory: \url{https://sdo.gsfc.nasa.gov/}}
+
+\bibitem[\protect\astroncite{PALM}{}]{soft:PALM}
+PALM,
+\newblock {\em {\textsc{} \url{https://palm.muk.uni-hannover.de/trac} bajo
+  licencia GNU General Public License V3}}
+
+\bibitem[\protect\astroncite{{Schmidt}}{2010}]{2010Schmidt}
+{Schmidt}, J.~D.: 2010,
+\newblock {\em {Numerical Simulations of Optical Wave Propagation}},
+\newblock SPIE Press.
+
+\bibitem[\protect\astroncite{STScI-JWST}{}]{www:JWST}
+STScI-JWST,
+\newblock {\em Jammes Webb Space Telescope: \url{http://www.stsci.edu/jwst/}}
+
+\bibitem[\protect\astroncite{{Toro-Iniesta}}{2003}]{2003ToroIniesta}
+{Toro-Iniesta}, J.~C.: 2003,
+\newblock {\em {Introduction to Spectropolarimetry}},
+\newblock Cambridge University Press.
+
+\bibitem[\protect\astroncite{{Vita-Finzi}}{2008}]{2008VitaFinzi}
+{Vita-Finzi}, C.: 2008,
+\newblock {\em {The Sun. A User's Manual}},
+\newblock Springer.
+
+\end{thebibliography}
