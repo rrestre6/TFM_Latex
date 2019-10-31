@@ -1,15 +1,30 @@
 
+En este Capítulo final se detallan y discuten las conclusiones  mas relevantes de este trabajo de fin de máster. Empezaremos hablando de las conclusiones generales del trabajo y  luego unas conclusiones especificas asociadas a cada capitulo y finalmente una discusión sobre la dirección en la que debería continuar el trabajo.
+
+\section{Conclusiones generales}
+\label{sec:1cap5}
+Como era de esperar, la resolución de la señal óptica obtenida por sistemas formadores de imagen que están ubicados en tierra, se ven afectadas de forma negativa por las variaciones de fase, ocasionadas por las variaciones de indice de refracción, que introducen las turbulencias atmosféricas. La afectación sobre la información óptica se traduce en una perdida de las frecuencias altas y un aumento en el ruido. Sin embargo, los parámetros de Stokes se pueden recuperar y estructuras finas dentro de estos siguen siendo apreciables, cuando son comparados con los mismos parámetros recuperados sin la afectación de las turbulencias atmosféricas. Por tanto, el campo magnético del Sol (magnetograma) se puede reconstruir a partir de los parámetros de Stokes, lo que nos lleva a pensar, que los baricentros de las zonas que son magnéticamente opuestas podrán estar calculados con fiabilidad y así el cambio en la distancia entre estos, la cual, es el parámetro principal de predicción de fulguraciones solares y por consiguiente de las \textit{tormentas geomagnéticas}.
+
+Por otro lado, con este TFM se ha generado una metodología para hacer estudios preliminares, es decir antes de las mediciones, de ubicaciones que permitan usar tecnología de bajo costo para la predicción de \textit{tormentas geomagnéticas}, incluidos sitios no completamente aptos para la observación astronómica, como busca el proyecto SAMNet. 
 
 
-\section{Sección 1}
-\label{sec:1cap2}
+\section{Conclusiones por capítulo}
+\label{sec:2cap5}
+\subsection{Simulación de las turbulencias atmosféricas}
+El estudio de la dinámica atmosférica y por tanto de las turbulencias vía medición, es un campo complejo que involucra muchas variables físicas, en ocasiones difíciles de describir e interpretar, incluso si se utilizan instrumentos de medida sofisticados. Por esta razón, las simulaciones tipo LES con modelos físico-matemáticos muy rigurosos, han permitido una comprensión mucho mayor de los procesos de formación de turbulencias y la interacción con propiedades locales en tierra. Para el caso de Villa de Leyva, se simuló la formación de Eddies locales y se obtuvo el parámetro estructural de indice de refracción necesario para definir la propagación de la luz en este medio inhomogéneo. De los parámetros atmosféricos obtenidos, se concluye que la atmósfera en la localización analizada es altamente turbulenta ($C_{n}^{2} \sim 10^{-15} $), comparado con los sitios científicos especializados para observación astronómica ($C_{n}^{2} \sim 10^{-17}$).
+
+Kolmogorov sentó las bases para la comprensión de la dinámica atmosférica, usando herramientas estadísticas que facilitan la solución de las ecuaciones de Navier-Stokes y con las capacidades computacionales actuales (computación de alto rendimiento) se ha facilitado hacer simulaciones de atmósferas locales, en las que interactúan varios paramentos que hacen costoso el tiempo de procesamiento. Adicionalmente, las simulaciones LES se han convertido en una herramienta complementaria a las medidas. Dentro de este TFM se consiguió entender como interactúan la variables que definen las turbulencias atmosféricas y por tanto, hacer simulaciones de este tipo usando herramientas científicas disponibles de código abierto.
+
+\subsection{Propagación de la luz en medios inhomogéneos}
+La forma en la que la luz se propaga en un medio depende de las propiedades de este. Para el caso de la atmósfera, el cual es un medio inhomogéneo, no magnético e isotrópico, la luz se ve afectada de forma aleatoria tanto en cambios de dirección como en cambios de amplitud. Por tanto, definiendo el campo óptico de forma fasorial, la atmósfera produce cambios que afectan la fase y la amplitud-logarítmica del campo, lo cual permite definir matemáticamente esta propagación a través de la teoría escalar de la difracción y generar o utilizar algoritmos computacionales existentes que representen este fenómeno, siguiendo las propiedades físicas de la atmósfera, definidas estadisticamente. En este trabajo se programó el algoritmo de espectro angular y se determinaron las propiedades ópticas (OTF y PSF) que definen la calidad de un sistema óptico, esto permitió comparar la perdida de resolución debido a las turbulencias atmosféricas (PSF $\sim XXX$ arcsec) en el proceso de formación de imagen, comparado con sistema limitado por difracción de la apertura analizada (PSF $\sim XXX$ arcsec).
+    
+\subsection{Espectro-polarimetría Solar}
+
+
+\section{Trabajo futuro}
+\label{sec:3cap5}
 
 
 
-\subsection{Subsección 1}
-
-
-
-\subsection{Subsección 2}
 
 
