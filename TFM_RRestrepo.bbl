@@ -1,5 +1,19 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\astroncite{Andreas}{1988}]{andreas1988estimating}
+Andreas, E.~L.: 1988,
+\newblock {\em JOSA A} {\bf 5(4)}, 481
+
+\bibitem[\protect\astroncite{Andrews and Phillips}{2005}]{2005andrews}
+Andrews, L.~C. y Phillips, R.~L.: 2005,
+\newblock {\em Laser beam propagation through random media}, Vol. 152,
+\newblock SPIE press Bellingham, WA
+
+\bibitem[\protect\astroncite{{Breckinridge}}{2012}]{2012Breckinridge}
+{Breckinridge}, J.~B.: 2012,
+\newblock {\em {Basic Optics for the Astronomical Sciences}},
+\newblock SPIE Press.
+
 \bibitem[\protect\astroncite{{Collins}}{2013}]{2013Collins}
 {Collins}, C.: 2013,
 \newblock {\em {Astronomy 101: From the Sun and Moon to Whormholes and
@@ -25,6 +39,25 @@ ESO-VLT,
 \newblock {\em Very Large Telescope:
   \url{https://www.eso.org/public/teles-instr/paranal-observatory/vlt/}}
 
+\bibitem[\protect\astroncite{Frederickson et
+  al.}{2000}]{frederickson2000estimating}
+Frederickson, P.~A., Davidson, K.~L., Zeisse, C.~R., y Bendall, C.~S.: 2000,
+\newblock {\em Journal of Applied Meteorology} {\bf 39(10)}, 1770
+
+\bibitem[\protect\astroncite{Fried}{1965}]{fried1965statistics}
+Fried, D.~L.: 1965,
+\newblock {\em JoSA} {\bf 55(11)}, 1427
+
+\bibitem[\protect\astroncite{Goodman}{2005}]{2005goodmanFO}
+Goodman, J.~W.: 2005,
+\newblock {\em Introduction to Fourier optics},
+\newblock Roberts and Company Publishers
+
+\bibitem[\protect\astroncite{Goodman}{2015}]{2015goodman}
+Goodman, J.~W.: 2015,
+\newblock {\em Statistical optics},
+\newblock John Wiley \& Sons
+
 \bibitem[\protect\astroncite{Granados-Hern{\'a}ndez}{2019}]{man:2019Granados}
 Granados-Hern{\'a}ndez, N.: 2019,
 \newblock {\em {An{\'a}lisis de Centroides de Polaridad Magn{\'e}tica en
@@ -36,6 +69,21 @@ Granados-Hern{\'a}ndez, N.: 2019,
 HSPF-SAMNet,
 \newblock {\em Solar Activity Monitor NETwork:
   \url{http://hspf.eu/samnet.html}}
+
+\bibitem[\protect\astroncite{IDEAM}{}]{www:IDEAM}
+IDEAM,
+\newblock {\em Instituto de Hidrología, Meteorología y Estudios Ambientales:
+  \url{http://institucional.ideam.gov.co/jsp/index.jsf}}
+
+\bibitem[\protect\astroncite{Ishimaru}{2017}]{2017ishimaru}
+Ishimaru, A.: 2017,
+\newblock {\em Electromagnetic wave propagation, radiation, and scattering from
+  fundamentals to applications},
+\newblock Wiley Online Library
+
+\bibitem[\protect\astroncite{Kolmogorov}{1941}]{kolmogorov1941local}
+Kolmogorov, A.~N.: 1941,
+\newblock {\em Cr Acad. Sci. URSS} {\bf 30}, 301
 
 \bibitem[\protect\astroncite{{Kors{\'o}s} et al.}{2015}]{2015ApJ...802L..21K}
 {Kors{\'o}s}, M.~B., {Ludm{\'a}ny}, A., {Erd{\'e}lyi}, R., y {Baranyi}, T.:
@@ -62,6 +110,10 @@ HSPF-SAMNet,
   {S{\"u}hring}, M., y {Raasch}, S.: 2015,
 \newblock {\em Geoscientific Model Development Discussions} {\bf 8}, 1539
 
+\bibitem[\protect\astroncite{Moeng and Sullivan}{1994}]{moeng1994comparison}
+Moeng, C.-H. y Sullivan, P.~P.: 1994,
+\newblock {\em Journal of the Atmospheric Sciences} {\bf 51(7)}, 999
+
 \bibitem[\protect\astroncite{NASA-HST}{}]{www:HST}
 NASA-HST,
 \newblock {\em Hubble Space Telescope: \url{https://hubblesite.org/}}
@@ -70,10 +122,33 @@ NASA-HST,
 NASA-SDO,
 \newblock {\em Solar Dynamics Obserbatory: \url{https://sdo.gsfc.nasa.gov/}}
 
+\bibitem[\protect\astroncite{Nazarathy and Shamir}{1982}]{nazarathy1982first}
+Nazarathy, M. y Shamir, J.: 1982,
+\newblock {\em JOSA} {\bf 72(3)}, 356
+
+\bibitem[\protect\astroncite{Nickola}{2012}]{man:2012Nickola}
+Nickola, M.: 2012,
+\newblock {\em {Astronomical seeing conditions as determined by turbulence
+  modelling and optical measurement}},
+\newblock Faculty of Natural and Agricultural Sciences. University of Pretoria.
+  South Africa
+
+\bibitem[\protect\astroncite{Obukhov}{1970}]{man:obukhov1970structure}
+Obukhov, A.~M.: 1970,
+\newblock {\em Structure of temperature field in turbulent flow},
+\newblock Technical report, AIR FORCE SYSTEMS COMMAND WRIGHT-PATTERSON AFB OH
+  FOREIGN TECHNOLOGY DIVISION
+
 \bibitem[\protect\astroncite{PALM}{}]{soft:PALM}
 PALM,
 \newblock {\em {\textsc{} \url{https://palm.muk.uni-hannover.de/trac} bajo
   licencia GNU General Public License V3}}
+
+\bibitem[\protect\astroncite{Sagaut}{2006}]{2006sagaut}
+Sagaut, P.: 2006,
+\newblock {\em Large eddy simulation for incompressible flows: an
+  introduction},
+\newblock Springer Science \& Business Media
 
 \bibitem[\protect\astroncite{{Schmidt}}{2010}]{2010Schmidt}
 {Schmidt}, J.~D.: 2010,
@@ -84,6 +159,16 @@ PALM,
 STScI-JWST,
 \newblock {\em Jammes Webb Space Telescope: \url{http://www.stsci.edu/jwst/}}
 
+\bibitem[\protect\astroncite{{Stull}}{2012}]{2012stull}
+{Stull}, R.~B.: 2012,
+\newblock {\em {An introduction to boundary layer meteorology}}, Vol.~13,
+\newblock Springer Science \& Business Media
+
+\bibitem[\protect\astroncite{Tatarski}{2016}]{2016tatarski}
+Tatarski, V.~I.: 2016,
+\newblock {\em Wave propagation in a turbulent medium},
+\newblock Courier Dover Publications
+
 \bibitem[\protect\astroncite{{Toro-Iniesta}}{2003}]{2003ToroIniesta}
 {Toro-Iniesta}, J.~C.: 2003,
 \newblock {\em {Introduction to Spectropolarimetry}},
@@ -93,5 +178,9 @@ STScI-JWST,
 {Vita-Finzi}, C.: 2008,
 \newblock {\em {The Sun. A User's Manual}},
 \newblock Springer.
+
+\bibitem[\protect\astroncite{Wilson and Fedorovich}{2012}]{wilson2012direct}
+Wilson, C. y Fedorovich, E.: 2012,
+\newblock {\em Acta Geophysica} {\bf 60(5)}, 1474
 
 \end{thebibliography}

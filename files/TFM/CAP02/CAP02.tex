@@ -1,32 +1,32 @@
-La atmósfera de la Tierra se puede entender como una envolvente de aire atrapada en dirección de la superficie debido a la atracción gravitatoria~\cite{ref}. Esta envolvente es una mezcla de gases con variaciones espacio-temporales de temperatura y presión~\cite{ref}, las cuales, definen la estratificación de las diferentes capas, aquellas que están definidas en los primeros 100 km se llaman: troposfera, estratosfera, mesosfera y termosfera~\cite{ref}. La Fig.~\ref{fig:atmTierra} muestra las variaciones tanto de temperatura y presión de las diferentes capas atmosféricas.
+La atmósfera de la Tierra se puede entender como una envolvente de aire atrapada en dirección de la superficie debido a la atracción gravitatoria~\cite{man:2012Nickola}. Esta envolvente es una mezcla de gases con variaciones espacio-temporales de temperatura y presión~\cite{moeng1994comparison}, las cuales, definen la estratificación de las diferentes capas, aquellas que están definidas en los primeros 100 km se llaman: troposfera, estratosfera, mesosfera y termosfera~\cite{man:2012Nickola, 2012stull}. La Fig.~\ref{fig:atmTierra} muestra las variaciones tanto de temperatura y presión de las diferentes capas atmosféricas.
 
 \begin{figure}
 	\centering
 	%Ruta
 	\includegraphics[width=0.8\textwidth]{./files/TFM/CAP02/figures/astmPresureTemperature.png}
 	% caption
-	\caption[]{Perfil de temperatura vs. presión para en las diferentes capas atmosféricas de la Tierra~\cite{refSantaCRuz}}
+	\caption[]{Perfil de temperatura vs. presión para en las diferentes capas atmosféricas de la Tierra~\cite{man:2012Nickola}}
 	\label{fig:atmTierra}
 \end{figure} 
 
-La capa que cubre los primeros 2 km dentro de la troposfera se llama Planetary Boundary Layer (PLB) y es la que mas aporta a las turbulencias atmosféricas, en los primeros 100 m es donde ocurre la turbulencia mas disruptiva~\cite{ref}, esta es una de las razones por la cual, los telescopios científicos de grandes aperturas esta elevados~\cite{ref} y con cúpulas que estabilizan la atmósfera en los primeros metros. Principalmente, la turbulencia es el resultado del contacto entre la PLB con flujo de aire a diferentes temperatura y las masas de aire local inestables muy cerca de la superficie, las cuales son llamadas eddies~\cite{ref}. Sin embargo, los eddies también se forman en alturas mas elevadas cuando se produce una fricción entre diferentes flujos ambientales, estos crean vientos de corte que cambian de dirección y velocidad con la altura, generando así los eddies~\cite{ref}. Lo anterior ocurre debido a que la PLB es responsable del transporte vertical de flujos turbulentos de cantidad de movimiento (momentum), masa y calor latente desde la superficie~\cite{ref}. Un consecuencia importante de este proceso, es el cambio en el indice de refracción del aire, temporal y espacialmente~\cite{ref}.
+La capa que cubre los primeros 2 km dentro de la troposfera se llama Planetary Boundary Layer (PLB) y es la que mas aporta a las turbulencias atmosféricas, en los primeros 100 m es donde ocurre la turbulencia mas disruptiva~\cite{man:2012Nickola}, esta es una de las razones por la cual, los telescopios científicos de grandes aperturas esta elevados~\cite{2012Breckinridge} y con cúpulas que estabilizan la atmósfera en los primeros metros. Principalmente, la turbulencia es el resultado del contacto entre la PLB con flujo de aire a diferentes temperatura y las masas de aire local inestables muy cerca de la superficie, las cuales son llamadas eddies~\cite{2012stull}. Sin embargo, los eddies también se forman en alturas mas elevadas cuando se produce una fricción entre diferentes flujos ambientales, estos crean vientos de corte que cambian de dirección y velocidad con la altura, generando así los eddies~\cite{2012stull}. Lo anterior ocurre debido a que la PLB es responsable del transporte vertical de flujos turbulentos de cantidad de movimiento (momentum), masa y calor latente desde la superficie~\cite{moeng1994comparison, 2012stull, man:2012Nickola}. Un consecuencia importante de este proceso, es el cambio en el indice de refracción del aire, temporal y espacialmente~\cite{2016tatarski}.
 
-La atmósfera de la Tierra es por tanto un medio inhomogéneo, que puede ser caracterizada por unos parámetros físicos, siguiendo unos modelos matemáticos propios de la estadística. El modelo mas aceptado es el de Kolmogorov~\cite{ref} con algunas variaciones afinadas~\cite{ref} y diferentes formas de implementación~\cite{ref}. 
+La atmósfera de la Tierra es por tanto un medio inhomogéneo, que puede ser caracterizada por unos parámetros físicos, siguiendo unos modelos matemáticos propios de la estadística. El modelo mas aceptado es el de~\cite{kolmogorov1941local} con algunas variaciones afinadas~\cite{man:obukhov1970structure, 2016tatarski} y diferentes formas de implementación~\cite{2010Schmidt}. 
 \vspace{-0.5cm}
 \section{Modelo de turbulencia de Kolmogorov}\label{sec:modelKolmogorov}
 \vspace{-0.2cm}
-El flujo turbulento es un proceso no lineal que esta gobernado por las ecuaciones de Navier-Stokes~\cite{ref}. Resolver dichas ecuaciones para una turbulencia totalmente desarrollada es complejo, en términos de las suposiciones sobre las variable físicas involucradas que definen el microclima y también en términos de su implementación computacional~\cite{ref}. Kolmogorov propuso una teoría estadística y separó la forma de entender la atmósfera en tres regiones definidas por las escalas de los eddies, supuso un medio incompresible donde los eddies de escala pequeña (\emph{inner scale} - $l_0$) son homogéneos e isotrópicos y los eddies de gran escala (\emph{outer scale} - $L_0$) transfieren la energía cinética a los mas pequeños, la región entre $l_0$ y $L_0$ se le conoce como subrango inercial. El efecto cascada  de transferencia de energía cinética es el responsable  de las variaciones de temperatura y densidad del aire~\cite{ref} y por tanto de las variaciones del indice de refracción. La Fig.~\ref{fig:modelKolmogorov} muestra el modelo de Kolmogorov gráficamente.
+El flujo turbulento es un proceso no lineal que esta gobernado por las ecuaciones de Navier-Stokes~\cite{2006sagaut}. Resolver dichas ecuaciones para una turbulencia totalmente desarrollada es complejo, en términos de las suposiciones sobre las variable físicas involucradas que definen el microclima y también en términos de su implementación computacional~\cite{2010Schmidt}. Kolmogorov propuso una teoría estadística y separó la forma de entender la atmósfera en tres regiones definidas por las escalas de los eddies, supuso un medio incompresible donde los eddies de escala pequeña (\emph{inner scale} - $l_0$) son homogéneos e isotrópicos y los eddies de gran escala (\emph{outer scale} - $L_0$) transfieren la energía cinética a los mas pequeños, la región entre $l_0$ y $L_0$ se le conoce como subrango inercial. El efecto cascada  de transferencia de energía cinética es el responsable  de las variaciones de temperatura y densidad del aire~\cite{kolmogorov1941local, 2016tatarski} y por tanto de las variaciones del indice de refracción. La Fig.~\ref{fig:modelKolmogorov} muestra el modelo de Kolmogorov gráficamente.
 
 \begin{figure}
 	\centering
 	%Ruta
 	\includegraphics[width=0.8\textwidth]{./files/TFM/CAP02/figures/modelKolmogorov.png}
 	% caption
-	\caption[]{Modelo de turbulencia de Kolmogorov~\cite{tesisSudafrica}}
+	\caption[]{Modelo de turbulencia de Kolmogorov~\cite{man:2012Nickola}}
 	\label{fig:modelKolmogorov}
 \end{figure} 
 
-Con la suposición, que dentro del subrango inercial los eddies son estadísticamente  homogéneos e isotrópicos en pequeñas regiones del espacio, propiedades como la velocidad y el indice de refracción tiene incrementos estacionarios~\cite{ref:goodman}, esto permite un analisis dimensional para determinar la velocidad turbulenta de los eddies en relación con su tamaño ($v \propto r^{(1/3)}$)~\cite{ref}. Por tanto, la función estructural de velocidad se puede definir como el promedio ensamblado de la diferencia cuadrática de las velocidades en dos puntos cercanos del espacio ($D_v(r) = \langle(v_1-v_2)^2 \rangle$) y como resultado debe ser de la forma
+Con la suposición, que dentro del subrango inercial los eddies son estadísticamente  homogéneos e isotrópicos en pequeñas regiones del espacio, propiedades como la velocidad y el indice de refracción tiene incrementos estacionarios~\cite{2015goodman}, esto permite un analisis dimensional para determinar la velocidad turbulenta de los eddies en relación con su tamaño ($v \propto r^{(1/3)}$)~\cite{kolmogorov1941local}. Por tanto, la función estructural de velocidad se puede definir como el promedio ensamblado de la diferencia cuadrática de las velocidades en dos puntos cercanos del espacio ($D_v(r) = \langle(v_1-v_2)^2 \rangle$) y como resultado debe ser de la forma
 \begin{equation}
 D_v(r) = C_{v}^{2}r^{(2/3)},  \quad l_0 << r << L_0,
 \end{equation}  
@@ -34,7 +34,7 @@ donde, $C_{v}^{2} \quad [m^{(4/3)}s^{-2}]$ es el parámetro estructural de veloci
 
 \subsection{Parámetro estructural de índice de refracción $C_{n}^{2}$}
 \vspace{-0.2cm}
-Para longitudes de onda dentro del rango visible del espectro electromagnético, el indice de refracción ($n$) en relación con la estructura atmosférica, puede ser determinado como lo propuso~\cite{1998Andreas, 2000Frederickson},  
+Para longitudes de onda dentro del rango visible del espectro electromagnético, el indice de refracción ($n$) en relación con la estructura atmosférica, puede ser determinado como lo propuso~\cite{andreas1988estimating, frederickson2000estimating},  
 \begin{equation}
 n = 1+10^{-6}\Big{\{}m_1(\lambda)\frac{P}{T}+[m_2(\lambda)-m_1(\lambda)]\frac{qP}{T\varepsilon_q\gamma}\Big{\}},
 \end{equation}
@@ -45,7 +45,7 @@ m_2(\lambda)& = 64.8731 + 0.58058\lambda^{-2} - 0.0071150\lambda^{-4} + 0.000885
 \end{align}
 Definido $n$, ahora es posible encontrar la función estructural del indice de refracción como $D_n(r) = C_{n}^{2}r^{(2/3)}$ o como $D_n(r) = \langle(n_1-n_2)^2 \rangle$. Donde nos interesa el parámetro estructural de indice de refracción $C_{n}^{2} \quad [m^{(-2/3)}]$, parámetro necesario para propagar la luz a través de la atmósfera, como se explica en el Capitulo~\ref{chapter:03}.
 
-Sin embargo, como de las simulaciones atmosféricas usando LES, particularmente PALM~\cite{2015GMDD....8.1539M, soft:PALM}, se obtienen principalmente, la temperatura potencial ($\theta$), la humedad especifica ($q$), las componentes del flujo de velocidad ($v_u,v_v,v_w$) y parámetros estadísticos como varianzas y co-varianzas sobre estas variables, se plantea obtener $C_{n}^{2}$ usando la metodología planteada por~\cite{2012WilsonFedorovich} que usa las variables mencionadas.
+Sin embargo, como de las simulaciones atmosféricas usando LES, particularmente PALM~\cite{2015GMDD....8.1539M, soft:PALM}, se obtienen principalmente, la temperatura potencial ($\theta$), la humedad especifica ($q$), las componentes del flujo de velocidad ($v_u,v_v,v_w$) y parámetros estadísticos como varianzas y co-varianzas sobre estas variables, se plantea obtener $C_{n}^{2}$ usando la metodología planteada por~\cite{wilson2012direct} que usa las variables mencionadas.
 
 Por tanto, definimos $C_{n}^{2}$ como
 \small
@@ -53,7 +53,7 @@ Por tanto, definimos $C_{n}^{2}$ como
 C_{n}^{2} = (A^2\langle(\theta_1-\theta_2)^2 \rangle + 2AB\langle(\theta_1-\theta_2)(q_1-q_2) \rangle + B^2\langle(q_1-q_2)^2 \rangle)r^{(3/2)},
 \end{align}
 \normalsize
-donde los coeficientes $A$ y $B$, definidos por~\cite{1998Andreas}, son 
+donde los coeficientes $A$ y $B$, definidos por~\cite{andreas1988estimating}, son 
 \begin{align}
 A& = -10^{-6}m_1\Big (\frac{P}{T^2}\Big ), \\
 B& = 4.6150 \times 10^{-6}(m_2-m_1),
@@ -61,7 +61,7 @@ B& = 4.6150 \times 10^{-6}(m_2-m_1),
 con $m1$ y $m2$  definidos en las Eqs.~\ref{eq:m1} y~\ref{eq:m2}.
 \vspace{-0.5cm}
 \section{Simulación atmosférica usando LES}
-Como se explicó en el Capitulo~\ref{chapter:01}, parte del objetivo del proyecto SAMNet~\cite{www:SAMNet} es utilizar instrumentos de bajo costo para la predicación de \textit{tormentas geomagnéticas}, en ubicaciones que no son completamente aptas para la observación astronómica, cuando se habla de alta resolución en las imágenes científicas, pero que tienen relevancia por la cantidad de horas de exposición solar al día, durante todo el año y adicionalmente, no se necesita en principio, una alta resolución en las imágenes. La región seleccionada para el análisis de la atmósfera es Villa de Leyva, pueblo ubicado en Colombia. Las características climatológicas esta resumidas en la Tabla~\ref{tbl:climaVL}, extraídas del Instituto de Hidrología, Meteorología y Estudios Ambientales (IDEAM) de Colombia~\cite{www:ideam}. 
+Como se explicó en el Capitulo~\ref{chapter:01}, parte del objetivo del proyecto SAMNet~\cite{www:SAMNet} es utilizar instrumentos de bajo costo para la predicación de \textit{tormentas geomagnéticas}, en ubicaciones que no son completamente aptas para la observación astronómica, cuando se habla de alta resolución en las imágenes científicas, pero que tienen relevancia por la cantidad de horas de exposición solar al día, durante todo el año y adicionalmente, no se necesita en principio, una alta resolución en las imágenes. La región seleccionada para el análisis de la atmósfera es Villa de Leyva, pueblo ubicado en Colombia. Las características climatológicas esta resumidas en la Tabla~\ref{tbl:climaVL}, extraídas del Instituto de Hidrología, Meteorología y Estudios Ambientales (~\cite{www:IDEAM}) de Colombia. 
 
 \begin{table}[H]
 \begin{center}
@@ -72,7 +72,7 @@ Como se explicó en el Capitulo~\ref{chapter:01}, parte del objetivo del proyecto
 \end{tabular}} 
 \end{center}
 \vspace{-0.5cm}
-\caption[]{Indicadores de posición y climatológicos de Villa de Leyva (Colombia)~\cite{www:ideam}}
+\caption[]{Indicadores de posición y climatológicos de Villa de Leyva (Colombia)~\cite{www:IDEAM}}
  \label{tbl:climaVL}
  \end{table}
 \vspace{-0.5cm} 
@@ -80,7 +80,7 @@ Como se explicó en el Capitulo~\ref{chapter:01}, parte del objetivo del proyecto
  \vspace{-0.5cm}
 \subsection{Fundamentos de LES y Software PALM}
 \vspace{-0.2cm}
-LES es la sigla en ingles de Large Eddy Simulation. Principalmente, es un modelo matemático utilizado en el estudio computacional de la dinámica de fluidos para la simulación de turbulencias. Los flujos turbulentos, como puede ser la atmósfera terrestre, suelen estudiarse a través de solucionar la ecuaciones de Navier-Stokes, donde se requiere resolver periodos de tiempo extenso y un rango amplio de escalas, que afectan el campo de flujo. La principal idea detrás de LES es reducir el costo computacional ignorando las escalas mas pequeñas, haciendo filtros paso-bajos en las ecuaciones de Navier-Stokes, lo cual produce una perdida de resolución espacio-temporal, por el promediado en ambas magnitudes~\cite{ref}.
+LES es la sigla en ingles de Large Eddy Simulation. Principalmente, es un modelo matemático utilizado en el estudio computacional de la dinámica de fluidos para la simulación de turbulencias. Los flujos turbulentos, como puede ser la atmósfera terrestre, suelen estudiarse a través de solucionar la ecuaciones de Navier-Stokes, donde se requiere resolver periodos de tiempo extenso y un rango amplio de escalas, que afectan el campo de flujo. La principal idea detrás de LES es reducir el costo computacional ignorando las escalas mas pequeñas, haciendo filtros paso-bajos en las ecuaciones de Navier-Stokes, lo cual produce una perdida de resolución espacio-temporal, por el promediado en ambas magnitudes~\cite{2006sagaut}.
 
 \begin{figure}{H}
 	\centering
@@ -97,19 +97,19 @@ LES es la sigla en ingles de Large Eddy Simulation. Principalmente, es un modelo
 		\includegraphics[width=1.25\textwidth]{./files/TFM/CAP02/figures/LESsclFreq.png}
 	\end{subfigure}
 	% caption
-	\caption[]{Eddies en el dominio espacial (Izquierda) y frecuencial (Derecha) ~\cite{presentacionPALMbeggin}}
+	\caption[]{Eddies en el dominio espacial (Izquierda) y frecuencial (Derecha). Imagen tomada de la documentación de~\cite{soft:PALM}}
 	\label{fig:LESscl}
 \end{figure}
 
-En general, los puntos mas importantes a tener en cuenta cuando se hace una simulación LES son: a) El tamaño del dominio debe ser lo suficientemente amplio para capturar las escalas relevantes de turbulencia. b) El espaciado de la malla debe ser lo suficientemente fino para resolver el transporte turbulento. c) En las condiciones de frontera horizontal, los flujos de entrada y salida en la frontera no deben afectar el flujo turbulento, usualmente se usan las condiciones de frontera cíclica. d) El tiempo de simulación debe ser suficiente para alcanzar el estado cuasi-estacionario y una estadística estable, tanto para el flujo como para la turbulencia. e) El análisis de los datos debe hacerse solo después del comienzo de la turbulencia y después de que la media del flujo alcance el estado cuasi-estacionario~\cite{ref}.  
+En general, los puntos mas importantes a tener en cuenta cuando se hace una simulación LES son: a) El tamaño del dominio debe ser lo suficientemente amplio para capturar las escalas relevantes de turbulencia. b) El espaciado de la malla debe ser lo suficientemente fino para resolver el transporte turbulento. c) En las condiciones de frontera horizontal, los flujos de entrada y salida en la frontera no deben afectar el flujo turbulento, usualmente se usan las condiciones de frontera cíclica. d) El tiempo de simulación debe ser suficiente para alcanzar el estado cuasi-estacionario y una estadística estable, tanto para el flujo como para la turbulencia. e) El análisis de los datos debe hacerse solo después del comienzo de la turbulencia y después de que la media del flujo alcance el estado cuasi-estacionario~\cite{soft:PALM, 2006sagaut}.  
 
 Una de las principales características de la simulación LES, es que distingue entre las cantidades de escala-resulta (resolved-scale) y escala-submallada (subgrid-scale), una representación gráfica de los eddies para la simulación LES se muestra en la Fig.~\ref{fig:LESscl}. 
 
-Las turbulencias se pueden definir como la desviación ($\phi^*$) de un estado promediado ($[\phi]$), el promedio de la variable puede estar contenido en el espacio o tiempo promedio. Las cantidades pronosticadas en LES contienen ambas, el flujo promedio y la turbulencia de escala-resuelta ($\overline \phi=[\overline \phi]+\overline \phi^*$)~\cite{ref}. Como ejemplo, el \textbf{transporte} en escala-resuelta incluye el transporte por el promedio del flujo y el transporte por las turbulencias en escala-resulta, tal que,
+Las turbulencias se pueden definir como la desviación ($\phi^*$) de un estado promediado ($[\phi]$), el promedio de la variable puede estar contenido en el espacio o tiempo promedio. Las cantidades pronosticadas en LES contienen ambas, el flujo promedio y la turbulencia de escala-resuelta ($\overline \phi=[\overline \phi]+\overline \phi^*$)~\cite{2015GMDD....8.1539M, soft:PALM, 2006sagaut}. Como ejemplo, el \textbf{transporte} en escala-resuelta incluye el transporte por el promedio del flujo y el transporte por las turbulencias en escala-resulta, tal que,
 \begin{align*}
 \frac{\partial \overline u_i}{\partial t} = ...-\frac{\partial \textcolor{red}{\overline u_k \overline u_i}}{\partial x_k}...-\frac{\partial \textcolor{cyan}{\overline{u^{'}_{k}  u^{'}_{i}}}}{\partial x_k},
 \end{align*} 
-en color rojo esta el transporte en escala-resuleta y en cyan el transporte por escala-submallada, para el caso de homogeneidad horizontal ($\overline u_i= \langle \overline u_i \rangle + \overline u^{*}_{i}$), con $\overline u_i$ como el valor instantáneo, $\langle \overline u_i \rangle$ como el promedio horizontal y variación en $z$ y $\overline u^{*}_{i}$ como las desviación con respecto al promedio horizontal, este ultimo termino es la turbulencia en escala-resulta, el cual puede ser determinado de forma directa. las cantidades en escala-submallada, la cual esta definida después de cierta frecuencia de corte (frecuencias altas), deben ser modeladas y parametrizadas usando modelos estadísticos~\cite{ref} basados en la teoría de Kolmogorov. Las simulaciones LES están principalmente diseñadas para el subrango inercial.
+en color rojo esta el transporte en escala-resuleta y en cyan el transporte por escala-submallada, para el caso de homogeneidad horizontal ($\overline u_i= \langle \overline u_i \rangle + \overline u^{*}_{i}$), con $\overline u_i$ como el valor instantáneo, $\langle \overline u_i \rangle$ como el promedio horizontal y variación en $z$ y $\overline u^{*}_{i}$ como las desviación con respecto al promedio horizontal, este ultimo termino es la turbulencia en escala-resulta, el cual puede ser determinado de forma directa. las cantidades en escala-submallada, la cual esta definida después de cierta frecuencia de corte (frecuencias altas), deben ser modeladas y parametrizadas usando modelos estadísticos~\cite{2006sagaut, man:obukhov1970structure, 2016tatarski, kolmogorov1941local} basados en la teoría de Kolmogorov. Las simulaciones LES están principalmente diseñadas para el subrango inercial.
 
 El software PALM es una contribución de muchos equipos de trabajo a lo largo del globo, liderado por la Universidad de Leibniz en Hannover, Alemania~\cite{2015GMDD....8.1539M, soft:PALM}. Escrito en Fortran95/2003, PALM tiene varias modalidades de ejecución, incluida la paralelización en CPU y GPU, es de código abierto bajo licencia GNU v3.
 
@@ -121,7 +121,7 @@ El modelo usa las ecuaciones de Navier-Stokes en la aproximación Boussinesq inco
 \frac{\partial u_i}{\partial t} = \frac{\partial u_i u_j}{\partial x_j} - \varepsilon_{ijk}f_ju_k + \varepsilon_{i3j}f_3u_{g,j} - \frac{1}{\rho_0}\frac{\partial \pi^*}{\partial x_i} + g\frac{\theta_v - \langle \theta_v \rangle}{\langle \theta_v \rangle}\delta_{i3} - \frac{\partial}{\partial x_j} \Big(\overline{u^{"}_{i} u^{"}_{j}} - \frac{2}{3}e\delta_{ij} \Big), 
 \end{align}
 \normalsize
-los paréntesis triangulares denotan un dominio horizontal promediado, el subindice $0$ indica el valor en superficie, las doble comillas indican variables en la escala-submallada, la barra sobre las variables indica cantidades filtradas en la escala-submallada. Sin embargo, todas variables están filtradas por la discretización. $u_i$ son componentes de velocidad, $x_i$ son las componentes de posición, $t$ es el tiempo, $f_j$ es el parámetro de Coriolis, $u_{g,j}$ son las componentes de la velocidad del viento geostrópico, $\rho_0$ la densidad del aire, $\pi^*$ parámetro de la perturbación de presión modificada, $e$ es la energía cinética turbulenta en escala-submallada, $g$ aceleración de la gravedad, $\delta_{ij}$ es delta de Kronecker y $\varepsilon$ es el símbolo de Levi-Civita. Adicionalmente a la Eq.~\ref{eq:NS}, PALM necesita las ecuaciones de conservación de masa, energía y humedad, mas la ecuación de continuidad~\cite{librodeLES}, para resolver las mencionadas cantidades de pronostico.
+los paréntesis triangulares denotan un dominio horizontal promediado, el subindice $0$ indica el valor en superficie, las doble comillas indican variables en la escala-submallada, la barra sobre las variables indica cantidades filtradas en la escala-submallada. Sin embargo, todas variables están filtradas por la discretización. $u_i$ son componentes de velocidad, $x_i$ son las componentes de posición, $t$ es el tiempo, $f_j$ es el parámetro de Coriolis, $u_{g,j}$ son las componentes de la velocidad del viento geostrópico, $\rho_0$ la densidad del aire, $\pi^*$ parámetro de la perturbación de presión modificada, $e$ es la energía cinética turbulenta en escala-submallada, $g$ aceleración de la gravedad, $\delta_{ij}$ es delta de Kronecker y $\varepsilon$ es el símbolo de Levi-Civita. Adicionalmente a la Eq.~\ref{eq:NS}, PALM necesita las ecuaciones de conservación de masa, energía y humedad, mas la ecuación de continuidad~\cite{2006sagaut, 2015GMDD....8.1539M, soft:PALM}, para resolver las mencionadas cantidades de pronostico.
 \vspace{-0.5cm}
 \subsection{Resultados de las simulaciones atmosféricas}
 \vspace{-0.2cm}
