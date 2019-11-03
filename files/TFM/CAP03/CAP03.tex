@@ -53,15 +53,15 @@ Como se ha dicho, las variaciones aleatorias en el indice de refracción producen
 \begin{equation}\label{eq:faseFourier}
 \phi(x,y)=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\Psi(f_x,f_y)e^{i2\pi(f_xx+f_yy)}df_xdf_y,
 \end{equation}
-donde, $\Psi(f_x,f_y)$ es la representación de la fase en el domino espacio-frecuencial. Entendiendo la fase como una realización de un proceso aleatorio con una PSD dada por $\Phi_{\phi}(\kappa)$ o $\Phi_{\phi}(f)$ y usando el terorema de Parseval, mas la definición de PSD~\cite{schmitd} obtenemos la siguiente relación
+donde, $\Psi(f_x,f_y)$ es la representación de la fase en el domino espacio-frecuencial. Entendiendo la fase como una realización de un proceso aleatorio con una PSD dada por $\Phi_{\phi}(\kappa)$ o $\Phi_{\phi}(f)$ y usando el terorema de Parseval, mas la definición de PSD~\cite{2010Schmidt, 2005goodmanFO} obtenemos la siguiente relación
 \begin{equation}\label{eq:fasePSD_Rel}
 \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\Phi_{\phi}(f_x,f_y)df_xdf_y=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\lvert\phi(x,y)\lvert^2dxdy,
 \end{equation}
-Ahora, usando la Eq.~\ref{eq:faseFourier} de forma discreta para poder ser computada, esta se convierte en una serie de Fourier donde el conjunto de los coeficientes son la variable de interés para construir la fase aleatoria. Para determinar los coeficientes se utilizara el teorema de limite central, con el cual obtener una distribución Gaussiana~\cite{schmitd}. La razón principal de este razonamiento, es que las variaciones de fase a través de la atmósfera tiene muchas inhomogeneidades aleatorias independientes a lo largo del camino óptico. Tal que, los coeficientes pueden ser escritos usando la Eq.~\ref{eq:faseFourier} y la Eq.~\ref{eq:fasePSD_Rel} en su forma discreta, como
+Ahora, usando la Eq.~\ref{eq:faseFourier} de forma discreta para poder ser computada, esta se convierte en una serie de Fourier donde el conjunto de los coeficientes son la variable de interés para construir la fase aleatoria. Para determinar los coeficientes se utilizara el teorema de limite central, con el cual obtener una distribución Gaussiana~\cite{2015goodman, 2010Schmidt}. La razón principal de este razonamiento, es que las variaciones de fase a través de la atmósfera tiene muchas inhomogeneidades aleatorias independientes a lo largo del camino óptico. Tal que, los coeficientes pueden ser escritos usando la Eq.~\ref{eq:faseFourier} y la Eq.~\ref{eq:fasePSD_Rel} en su forma discreta, como
 \begin{equation}\label{eq:cnm}
 \Big \langle \lvert c_{n,m} \lvert^{2} \Big \rangle = \frac{1}{L_{x}L_{y}}\Phi_{\phi}(f_{x_n},f_{y_m}),
 \end{equation}
-siendo $f_{x_n}$ y $f_{y_m}$ las frecuencias espaciales discretizadas y $L_x$ y $L_y$ el espaciado de la malla en representación frecuencial. $c{n,m}$ son los coeficientes de Fourier complejos y tanto su parte real como imaginaria tiene una media de cero, las varianzas son iguales y las covarianzas cruzadas son cero. Una vez obtenidos los coeficientes, computacionalmente hablando, la parte real de la transformada de Fourier de estos, es la fase aleatoria buscada. Sin embargo, este método no reproduce de forma precisa las frecuencias bajas del modelo modificado de Von Kármán, por tanto hay que introducir una corrección, basado en la reconstrucción de subarmónicos~\cite{ref78scmithlane}, donde se hace una suma adicional, para hacer un promedio de varias mascaras de fase aleatorias, solo alrededor de las frecuencias bajas. 
+siendo $f_{x_n}$ y $f_{y_m}$ las frecuencias espaciales discretizadas y $L_x$ y $L_y$ el espaciado de la malla en representación frecuencial. $c_{n,m}$ son los coeficientes de Fourier complejos y tanto su parte real como imaginaria tiene una media de cero, las varianzas son iguales y las covarianzas cruzadas son cero. Una vez obtenidos los coeficientes, computacionalmente hablando, la parte real de la transformada de Fourier de estos, es la fase aleatoria buscada. Sin embargo, este método no reproduce de forma precisa las frecuencias bajas del modelo modificado de Von Kármán, por tanto hay que introducir una corrección, basado en la reconstrucción de subarmónicos~\cite{lane1992simulation}, donde se hace una suma adicional, para hacer un promedio de varias mascaras de fase aleatorias, solo alrededor de las frecuencias bajas. 
 
 La fase para bajas frecuencias esta dada por
 \begin{equation}\label{eq:faseLF}
@@ -70,15 +70,15 @@ La fase para bajas frecuencias esta dada por
 donde, $N_p$ es la suma sobre diferentes mascaras de fase. La definicion de la fase para las altas frecuencias tiene la misma forma de la Eq.~\ref{eq:faseLF}, pero sin la sumatoria sobre $N_p$ y con $n$ y $m$ del tamaño total de la mascara, es decir, para el tamaño total de las frecuencias analizadas. Finalmente, la fase total es la suma de la fase para las altas frecuencias mas la fase para las bajas frecuencias.
 
 \section{Función de transferencia óptica (OTF) y función de punto esparcido (PSF)}\label{sec:4cap3}
-Retomando la teoría Rytov~\cite{refSchmitsobreRytov} que ha sido introducida al inicio de este Capitulo, el valor promedio de un campo óptico esta definido como
+Retomando la teoría Rytov~\cite{2017ishimaru, 2015goodman} que ha sido introducida al inicio de este Capitulo, el valor promedio de un campo óptico esta definido como
 \begin{equation}\label{eq:promCampoOptico}
 \langle U(\mathbf{r})\rangle =U_0(\mathbf{r})\langle \textrm{exp}[\psi(\mathbf{r})] \rangle.
 \end{equation}
-A partir de la Eq.~\ref{eq:promCampoOptico}, se puede definir la función de coherencia mutua, la cual nos indica, el grado de coherencia de la luz de un campo óptico y tiene un rol importante en la interpretación de la transformación de los campos ópticos parcialmente coherentes, a través de los sistemas ópticos formadores de imagen~\cite{goodman}. La función de coherencia mutua tiene la siguiente forma
+A partir de la Eq.~\ref{eq:promCampoOptico}, se puede definir la función de coherencia mutua, la cual nos indica, el grado de coherencia de la luz de un campo óptico y tiene un rol importante en la interpretación de la transformación de los campos ópticos parcialmente coherentes, a través de los sistemas ópticos formadores de imagen~\cite{2015goodman}. La función de coherencia mutua tiene la siguiente forma
 \begin{equation}\label{eq:Cohmutua}
 \Gamma(\mathbf{r},\mathbf{r'},z)=U_0(\mathbf{r})U_{0}^{*}(\mathbf{r'})\langle \textrm{exp}[\psi(\mathbf{r})\psi^{*}(\mathbf{r'})] \rangle.  
 \end{equation}
-La función de coherencia mutua permite calcular propiedades útiles para la caracterización de la propagación de la luz. Estas propiedades son el factor modulo complejo de coherencia, la función estructural de onda, la PSD de la fase y la OTF del sistema~\cite{goodman, schmith}. Para el modelo de atmósfera que se viene analizando, el factor modulo complejo de coherencia esta definido como 
+La función de coherencia mutua permite calcular propiedades útiles para la caracterización de la propagación de la luz. Estas propiedades son el factor modulo complejo de coherencia, la función estructural de onda, la PSD de la fase y la OTF del sistema~\cite{2015goodman, 2010Schmidt}. Para el modelo de atmósfera que se viene analizando, el factor modulo complejo de coherencia esta definido como 
 \begin{equation}\label{eq:FCM}
 \mu(\mathbf{r},\mathbf{r'},z)=\frac{\lvert\Gamma(\mathbf{r},\mathbf{r'},z)\lvert}{[\Gamma(\mathbf{r},\mathbf{r},z)\Gamma(\mathbf{r'},\mathbf{r'},z)]^{(1/2)}}.
 \end{equation}
@@ -86,5 +86,28 @@ Por otro lado, la OTF esta definida después de un cambio de coordenadas, de la m
 \begin{equation}\label{eq:OTF}
 \mathcal{H}(f)=\frac{\Gamma(\lambda f_l f)}{\Gamma(0)},
 \end{equation}
-donde, $f_l$ es la focal del sistema, $\lambda$ la longitud de onda y $f$ las coordenadas frecuenciales. Finalmente, como es bien sabido, la PSF del sistema óptico incluidas las turbulencias atmosféricas es la transformada de Fourier de la OTF~\cite{goodmanFO}.
+donde, $f_l$ es la focal del sistema, $\lambda$ la longitud de onda y $f$ las coordenadas frecuenciales. Finalmente, como es bien sabido, la PSF del sistema óptico incluidas las turbulencias atmosféricas es la transformada de Fourier de la OTF~\cite{2005goodmanFO}.
 \section{Resultados}
+Los resultados del algoritmo de propagación se muestra en la Fig.~\ref{fig:propAtmo}, donde el eje $x$ esta determinado por el muestreo en esa dirección, dividido por el diámetro del telescopio. De la misma forma que el eje $x$, el eje $y$ es determinado, tal que, hay simetría en ambos ejes. La Fig.~\ref{fig:propAtmo}(a) muestra la amplitud de la propagación de un haz puntual sin el efecto de la atmósfera, es decir, en el espacio libre, con el uso de súper-gaussianas para simular al absorción. La  Fig.~\ref{fig:propAtmo}(b) muestra la fase después de colimar el haz, como era de esperar, tiene frente de onda plano. La Fig.~\ref{fig:propAtmo}(c) muestra la amplitud del mismo haz que el de la Fig.~\ref{fig:propAtmo}(a), pero con el efecto de la atmósfera, se puede evidenciar como hay un esparcimiento de la luz. La Fig.~\ref{fig:propAtmo}(d) muestra la fase correspondiente a la propagación de la luz a través de la atmósfera, de esta puede inferirse como el frente de onda es aleatorio debido a los efectos de la atmósfera. En la Fig.~ .~\ref{fig:propAtmo}(c) y Fig.~\ref{fig:propAtmo}(d), el circulo rojo representa la superposición de la apertura del telescopio. 
+\begin{figure}
+	\centering
+	%Ruta
+	\includegraphics[width=0.8\textwidth]{./files/TFM/CAP03/figures/prop.png}
+	% caption
+	\caption[]{Resultados de la simulación del algoritmo de propagación. (a) Amplitud y (b) fase de haz puntual propagado sin atmósfera. (c) Amplitud y (d) fase de haz puntual propagado a través de la atmósfera. El circulo rojo representa la apertura del telescopio}
+	\label{fig:propAtmo}
+\end{figure} 
+
+La rutina principal realizada en Matlab, que llama las funciones para simular la propagación de la luz a través de la atmósfera, es mostrada en el Apéndice~\ref{anexo:02}. Los parámetros principales en la simulación fueron: longitud de onda ($550$ $nm$), distancia de propagación ($20$ $km$), diámetro del telescopio ($9.25"$), Numero-$f$ ($f/10$).
+
+Por otro lado, el resultado necesario para simular la degradación de las imágenes en los diferentes estados de polarización del Sol, es la PSF del sistema óptico incluida la atmósfera. La Fig.~\ref{fig:PSFatmo} muestra tres curvas, la representación de la PSF del telescopio limitado por difracción (azul), la PSF aberrada por la atmósfera (rojo) y el ajuste a una gaussiana de la curva aberrada de la atmósfera (negro).
+\begin{figure}
+	\centering
+	%Ruta
+	\includegraphics[width=0.8\textwidth]{./files/TFM/CAP03/figures/PSFs.png}
+	% caption
+	\caption[]{Resultado de la PSF. Corte en dirección x.}
+	\label{fig:PSFatmo}
+\end{figure} 
+
+En la Fig.~\ref{fig:PSFatmo}, puede verse como la PSF debido a la atmósfera se ensancha y baja su energía máxima. La resolución del telescopio es $\sim 0.6$ $arcsec$ y la resolución del sistema con atmósfera es $\sim 4$ $arcsec$, medidos desde el primer mínimo de del patrón de Airy. Si utilizamos el criterio de "Full-Width at Half Maximum" (FWHM) para la resolución del sistema con atmósfera (seeing) es $\sim 2$ $arcsec$.

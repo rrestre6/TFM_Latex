@@ -72,8 +72,8 @@ HSPF-SAMNet,
 
 \bibitem[\protect\astroncite{IDEAM}{}]{www:IDEAM}
 IDEAM,
-\newblock {\em Instituto de Hidrología, Meteorología y Estudios Ambientales:
-  \url{http://institucional.ideam.gov.co/jsp/index.jsf}}
+\newblock {\em Instituto de Hidrolog{\'i}a, Meteorolog{\'i}a y Estudios
+  Ambientales: \url{http://institucional.ideam.gov.co/jsp/index.jsf}}
 
 \bibitem[\protect\astroncite{Ishimaru}{2017}]{2017ishimaru}
 Ishimaru, A.: 2017,
@@ -93,6 +93,10 @@ Kolmogorov, A.~N.: 1941,
 \bibitem[\protect\astroncite{{Kors{\'o}s} et al.}{2019}]{2019JSWSC...9A...6K}
 {Kors{\'o}s}, M.~B., {Yang}, S., y {Erd{\'e}lyi}, R.: 2019,
 \newblock {\em Journal of Space Weather and Space Climate} {\bf 9}, A6
+
+\bibitem[\protect\astroncite{Lane et al.}{1992}]{lane1992simulation}
+Lane, R., Glindemann, A., Dainty, J., et al.: 1992,
+\newblock {\em Waves in random media} {\bf 2(3)}, 209
 
 \bibitem[\protect\astroncite{{Lang}}{2006}]{2006Lang}
 {Lang}, K.~R.: 2006,

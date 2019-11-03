@@ -1,0 +1,162 @@
+
+\tiny
+\begin{lstlisting}[language=Matlab, caption={Rutina para simular la propagación de la luz}, captionpos=b, label=Propanexo2]
+%------------------------------------------------------------------------------
+%% atmos_setup
+
+% determine geometry
+D2 = 0.235;   % diameter of the observation aperture [m]
+wvl = 0.55e-6; %1e-6; % optical wavelength [m]
+k = 2*pi / wvl; % optical wavenumber [rad/m]
+Dz =  20e3; %50e3;    % propagation distance [m]
+
+% use sinc to model pt source
+DROI = 4 * D2;  % diam of obs-plane region of interest [m]
+D1 = wvl*Dz / DROI;    % width of central lobe [m]
+R = Dz; % wavefront radius of curvature [m]
+
+% atmospheric properties
+Cn2 = 0.5e-15; It is a mean over air column % structure parameter [m^-2/3]
+% SW and PW coherence diameters [m]
+r0sw = (0.423 * k^2 * Cn2 * 3/8 * Dz)^(-3/5);
+r0pw = (0.423 * k^2 * Cn2 * Dz)^(-3/5);
+p = linspace(0, Dz, 1e3);
+% log-amplitude variance
+rytov = 0.563 * k^(7/6) * sum(Cn2 * (1-p/Dz).^(5/6) ...
+    .* p.^(5/6) * (p(2)-p(1)));
+
+% screen properties
+nscr = 8; % number of screens
+A = zeros(2, nscr); % matrix
+alpha = (0:nscr-1) / (nscr-1);
+A(1,:) = alpha.^(5/3);
+A(2,:) = (1 - alpha).^(5/6) .* alpha.^(5/6);
+b = [r0sw.^(-5/3); rytov/1.33*(k/Dz)^(5/6)];
+% initial guess
+x0 = (nscr/3*r0sw * ones(nscr, 1)).^(-5/3);
+% objective function
+fun = @(X) sum((A*X(:) - b).^2);
+% constraints
+x1 = zeros(nscr, 1);
+rmax =  1; % maximum Rytov number per partial prop. 
+x2 = rmax/1.33*(k/Dz)^(5/6) ./ A(2,:);
+x2(A(2,:)==0) = 50^(-5/3);
+% options = optimoptions('fmincon','Display','iter','Algorithm','sqp');
+options = optimset('Display','iter');
+[X,fval,exitflag,output] ...
+    = fmincon(fun,x0,[],[],[],[],x1,x2,[],options);
+% check screen r0s
+r0scrn = X.^(-3/5);
+r0scrn(isinf(r0scrn)) = 1e6;
+% check resulting r0sw & rytov
+bp = A*X(:); [bp(1)^(-3/5) bp(2)*1.33*(Dz/k)^(5/6)]
+[r0sw rytov]
+
+%------------------------------------------------------------------------------
+% pt_source_vac_prop
+
+delta1 = d1;    % source-plane grid spacing [m]
+deltan = d2;    % observation-plane grid spacing [m]
+n = nscr;         % number of planes
+
+% coordinates
+[x1 y1] = meshgrid((-N/2 : N/2-1) * delta1);
+[theta1 r1] = cart2pol(x1, y1);
+
+% point source
+pt = exp(-i*k/(2*R) * r1.^2) / D1^2 ...
+   .* sinc(x1/D1) .* sinc(y1/D1) ...
+   .* exp(-(r1/(4*D1)).^2);
+
+%pt=IxScl;
+% partial prop planes
+z = (1 : n-1) * Dz / (n-1);
+
+% simulate vacuum propagation
+sg = exp(-(x1/(0.47*N*d1)).^16) ...
+    .* exp(-(y1/(0.47*N*d1)).^16);
+t = repmat(sg, [1 1 n]);
+[xn yn Uvac] = ang_spec_multi_prop(pt, wvl, ...
+    delta1, deltan, z, t);
+% collimate the beam
+Uvac = Uvac .* exp(-i*pi/(wvl*R)*(xn.^2+yn.^2));
+
+%------------------------------------------------------------------------------
+%% pt_source_turb_prop
+
+l0 = 0;     % inner scale [m]
+L0 = inf;   % outer scale [m]
+
+zt = [0 z];  % propagation plane locations
+Delta_z = zt(2:n) - zt(1:n-1);    % propagation distances
+% grid spacings
+alpha = zt / zt(n);
+delta = (1-alpha) * delta1 + alpha * deltan;
+
+% initialize array for phase screens
+phz = zeros(N, N, n);
+nreals = 10;    % number of random realizations
+% initialize arrays for propagated fields,
+% aperture mask, and MCF
+Uout = zeros(N);
+mask = circ(xn/D2, yn/D2, 1);
+MCF2 = zeros(N);
+sg = repmat(sg, [1 1 n]);
+for idxreal = 1 : nreals     % loop over realizations
+    idxreal
+    % loop over screens
+    for idxscr = 1 : 1 : n
+        [phz_lo phz_hi] ...
+            = ft_sh_phase_screen ...
+            (r0scrn(idxscr), N, delta(idxscr), L0, l0);
+        phz(:,:,idxscr) = phz_lo + phz_hi;
+    end
+    % simulate turbulent propagation
+    [xn yn Uout] = ang_spec_multi_prop(pt, wvl, ....
+        delta1, deltan, z, sg.*exp(i*phz));
+    % collimate the beam
+    Uout = Uout .* exp(-i*pi/(wvl*R)*(xn.^2+yn.^2));
+    % accumulate realizations of the MCF  % Mirar Statistical Optics MCF=OTF
+    MCF2 = MCF2 + corr2_ft(Uout, Uout, mask, deltan);
+end
+% modulus of the complex degree of coherence
+MCDOC2 = abs(MCF2) / (MCF2(N/2+1,N/2+1));
+
+%------------------------------------------------------------------------------
+%% Telescope Imaging (PSF) and Atsmosphere imaging
+
+OTF_Telsecope = corr2_ft(mask, mask, ones(N), deltan);
+PSF_Telescope = ift2(OTF_Telsecope, deltan);
+PSF_Telescope = PSF_Telescope/max(PSF_Telescope(:));
+
+PSF_Atmosphere = ift2(MCF2, deltan);
+PSF_Atmosphere = PSF_Atmosphere/max(PSF_Atmosphere(:));
+
+%OTF = ((OTF_Telsecope/max(OTF_Telsecope(:))).*(MCF2/max(MCF2(:)))).*mask;
+%PSF = ift2(OTF, deltan);
+%PSF = PSF/max(PSF(:));
+
+%------------------------------------------------------------------------------
+%% Units convertion
+
+% Telescope properies Aperture D2 = 235 mm. conFactor paralax deducted (pc/AU). 
+% Pixel size in microns
+fRatio=10; focal=2350; covFactor=206265; pixelSize=4.8; 
+S=covFactor/focal; % Angular magnification
+rs=S*10^-3*pixelSize; % Resolution
+th=1.22*covFactor*(wvl/D2); % Angular resolution
+PSFcover= ceil(th/rs);
+PSF_Tel_1D = real(PSF_Telescope(:,size(PSF_Telescope,1)/2+1));
+PSF_size=PSF_Tel_1D( PSF_Tel_1D(:) >= 0.02 & PSF_Tel_1D(:) < 1);
+realUnits_PSF = PSFcover/length(PSF_size);
+scaledPSF_Atmosphere = imresize(real(PSF_Atmosphere) , realUnits_PSF, 'nearest');
+if mod(size(scaledPSF_Atmosphere,1),2) == 1;
+    scaledPSF_Atmosphere =  padarray(scaledPSF_Atmosphere,[1 1],0,'pre');
+end
+h= fspecial('average',7);
+scaledPSF_Atmosphere = imfilter(scaledPSF_Atmosphere,h,'same'); 
+scaledPSF_Atmosphere =  padarray(scaledPSF_Atmosphere,[(size(PSF_Telescope,1)/2 ...
+	-round(size(scaledPSF_Atmosphere,1)/2)) ...
+    (size(PSF_Telescope,1)/2-round(size(scaledPSF_Atmosphere,1)/2))],0,'both');
+    
+\end{lstlisting}

@@ -3,12 +3,6 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: TFM_RRestrepo.aux
 The style file: ./sty/astron.bst
 Database file #1: ./files/Biblio/Bib.bib
-Warning--I didn't find a database entry for "schmitd"
-Warning--I didn't find a database entry for "ref78scmithlane"
-Warning--I didn't find a database entry for "refSchmitsobreRytov"
-Warning--I didn't find a database entry for "goodman"
-Warning--I didn't find a database entry for "schmith"
-Warning--I didn't find a database entry for "goodmanFO"
 Warning--empty year in www:EST
 Warning--empty year in www:GAIA
 Warning--empty year in www:ALMA
@@ -19,45 +13,45 @@ Warning--empty year in www:HST
 Warning--empty year in www:SDO
 Warning--empty year in soft:PALM
 Warning--empty year in www:JWST
-You've used 37 entries,
+You've used 38 entries,
             2251 wiz_defined-function locations,
-            688 strings with 8491 characters,
-and the built_in function-call counts, 10872 in all, are:
-= -- 1047
-> -- 372
+            687 strings with 8564 characters,
+and the built_in function-call counts, 11270 in all, are:
+= -- 1086
+> -- 395
 < -- 35
-+ -- 120
-- -- 116
-* -- 921
-:= -- 1997
++ -- 128
+- -- 124
+* -- 964
+:= -- 2068
 add.period$ -- 0
-call.type$ -- 37
-change.case$ -- 207
-chr.to.int$ -- 37
-cite$ -- 47
-duplicate$ -- 486
-empty$ -- 744
-format.name$ -- 161
-if$ -- 2050
+call.type$ -- 38
+change.case$ -- 214
+chr.to.int$ -- 38
+cite$ -- 48
+duplicate$ -- 500
+empty$ -- 765
+format.name$ -- 170
+if$ -- 2124
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 42
-newline$ -- 168
-num.names$ -- 111
-pop$ -- 245
+missing$ -- 43
+newline$ -- 172
+num.names$ -- 114
+pop$ -- 251
 preamble$ -- 1
-purify$ -- 243
+purify$ -- 251
 quote$ -- 0
-skip$ -- 348
+skip$ -- 359
 stack$ -- 0
-substring$ -- 555
-swap$ -- 86
+substring$ -- 577
+swap$ -- 89
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 190
+type$ -- 196
 warning$ -- 10
-while$ -- 84
+while$ -- 87
 width$ -- 0
-write$ -- 409
-(There were 16 warnings)
+write$ -- 420
+(There were 10 warnings)
