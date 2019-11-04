@@ -13,45 +13,45 @@ Warning--empty year in www:HST
 Warning--empty year in www:SDO
 Warning--empty year in soft:PALM
 Warning--empty year in www:JWST
-You've used 38 entries,
+You've used 39 entries,
             2251 wiz_defined-function locations,
-            687 strings with 8564 characters,
-and the built_in function-call counts, 11270 in all, are:
-= -- 1086
-> -- 395
-< -- 35
-+ -- 128
-- -- 124
-* -- 964
-:= -- 2068
+            694 strings with 8724 characters,
+and the built_in function-call counts, 11587 in all, are:
+= -- 1120
+> -- 402
+< -- 36
++ -- 132
+- -- 126
+* -- 995
+:= -- 2122
 add.period$ -- 0
-call.type$ -- 38
-change.case$ -- 214
-chr.to.int$ -- 38
-cite$ -- 48
-duplicate$ -- 500
-empty$ -- 765
-format.name$ -- 170
-if$ -- 2124
+call.type$ -- 39
+change.case$ -- 219
+chr.to.int$ -- 39
+cite$ -- 49
+duplicate$ -- 514
+empty$ -- 786
+format.name$ -- 173
+if$ -- 2184
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 43
-newline$ -- 172
-num.names$ -- 114
-pop$ -- 251
+missing$ -- 44
+newline$ -- 176
+num.names$ -- 117
+pop$ -- 254
 preamble$ -- 1
-purify$ -- 251
+purify$ -- 257
 quote$ -- 0
-skip$ -- 359
+skip$ -- 370
 stack$ -- 0
-substring$ -- 577
-swap$ -- 89
+substring$ -- 604
+swap$ -- 92
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 196
+type$ -- 202
 warning$ -- 10
-while$ -- 87
+while$ -- 90
 width$ -- 0
-write$ -- 420
+write$ -- 431
 (There were 10 warnings)

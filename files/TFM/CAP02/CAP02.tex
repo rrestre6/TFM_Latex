@@ -5,7 +5,7 @@ La atmósfera de la Tierra se puede entender como una envolvente de aire atrapada
 	%Ruta
 	\includegraphics[width=0.8\textwidth]{./files/TFM/CAP02/figures/astmPresureTemperature.png}
 	% caption
-	\caption[]{Perfil de temperatura vs. presión para en las diferentes capas atmosféricas de la Tierra~\cite{man:2012Nickola}}
+	\caption[]{Perfil de temperatura vs. presión para en las diferentes capas atmosféricas de la Tierra~\cite{man:2012Nickola}.}
 	\label{fig:atmTierra}
 \end{figure} 
 
@@ -22,7 +22,7 @@ El flujo turbulento es un proceso no lineal que esta gobernado por las ecuacione
 	%Ruta
 	\includegraphics[width=0.8\textwidth]{./files/TFM/CAP02/figures/modelKolmogorov.png}
 	% caption
-	\caption[]{Modelo de turbulencia de Kolmogorov~\cite{man:2012Nickola}}
+	\caption[]{Modelo de turbulencia de Kolmogorov~\cite{man:2012Nickola}.}
 	\label{fig:modelKolmogorov}
 \end{figure} 
 
@@ -32,7 +32,7 @@ D_v(r) = C_{v}^{2}r^{(2/3)},  \quad l_0 << r << L_0,
 \end{equation}  
 donde, $C_{v}^{2} \quad [m^{(4/3)}s^{-2}]$ es el parámetro estructural de velocidad. De la misma forma como se ha analizado la velocidad, se puede analizar la temperatura potencial $\theta$, la cual esta relacionada linealmente con la temperatura ordinaria $T$, tal que, $\theta \propto T \propto r^{(1/3)}$ y por tanto, $D_T(r) = C_{T}^{2}r^{(2/3)}$ en el subrango inercial, con $C_{T}^{2} \quad [m^{(-2/3)}]$ como el parámetro estructural de temperatura.
 
-\subsection{Parámetro estructural de índice de refracción $C_{n}^{2}$}
+\subsection{Parámetro estructural de índice de refracción $C_{n}^{2}$}\label{subsec:cn2calculo}
 \vspace{-0.2cm}
 Para longitudes de onda dentro del rango visible del espectro electromagnético, el indice de refracción ($n$) en relación con la estructura atmosférica, puede ser determinado como lo propuso~\cite{andreas1988estimating, frederickson2000estimating},  
 \begin{equation}
@@ -72,7 +72,7 @@ Como se explicó en el Capitulo~\ref{chapter:01}, parte del objetivo del proyecto
 \end{tabular}} 
 \end{center}
 \vspace{-0.5cm}
-\caption[]{Indicadores de posición y climatológicos de Villa de Leyva (Colombia)~\cite{www:IDEAM}}
+\caption[]{Indicadores de posición y climatológicos de Villa de Leyva (Colombia)~\cite{www:IDEAM}.}
  \label{tbl:climaVL}
  \end{table}
 \vspace{-0.5cm} 
@@ -97,7 +97,7 @@ LES es la sigla en ingles de Large Eddy Simulation. Principalmente, es un modelo
 		\includegraphics[width=1.25\textwidth]{./files/TFM/CAP02/figures/LESsclFreq.png}
 	\end{subfigure}
 	% caption
-	\caption[]{Eddies en el dominio espacial (Izquierda) y frecuencial (Derecha). Imagen tomada de la documentación de~\cite{soft:PALM}}
+	\caption[]{Eddies en el dominio espacial (Izquierda) y frecuencial (Derecha). Imagen tomada de la documentación de~\cite{soft:PALM}.}
 	\label{fig:LESscl}
 \end{figure}
 
@@ -128,7 +128,7 @@ los paréntesis triangulares denotan un dominio horizontal promediado, el subindi
 EL primer paso para correr PALM, es definir un fichero de configuración, este tiene la forma mostrada en la Codigo~\ref{list_PALMconf} y el archivo usado para correr los modelos de la atmósfera de Villa de Leyva se encuentra en el Apéndice~\ref{anexo:01}.
 
 \footnotesize
-\begin{lstlisting}[caption={Ejemplo de fichero de configuración para PALM}, captionpos=b, label=list_PALMconf]
+\begin{lstlisting}[caption={Ejemplo de fichero de configuración para PALM.}, captionpos=b, label=list_PALMconf]
 
 &initialization_parameters
 	!-- grid parameters
@@ -154,3 +154,35 @@ EL primer paso para correr PALM, es definir un fichero de configuración, este ti
 \vspace{-0.2cm}
 \normalsize
 El fichero de configuración de PALM, tiene una amplia variedad de controles, no siempre evidentes de operar y entender, pero principalmente, se definen los tamaños de malla y la extensión ha analizar, así como características de la ubicación, es decir, altura sobre nivel del mar, longitud, latitud, componentes de la velocidad del viento en superficie, humedad relativa, temperatura, tipo de vegetación en el sitio, topografía, presión atmosférica en superficie, etc. También, se define la estación respecto al mes de año, tiempo total de la simulación, condiciones de frontera, tipo de algoritmo para la minimización. Los resultados numéricos para análisis posteriores de las variables de pronostico, son entregados en formato NetCDF (*.nc). Adicionalmente, se escribe un archivo PDF con imágenes de las variables de interés.
+
+Como ejemplo, la Fig.~\ref{fig:PALMthetaqp} muestra tres variables entregadas por PALM, la temperatura potencial ($\theta$), la presión ($p$) y la humedad  especifica ($q$) para los primeros 1200 m. Son perfiles promediados en el plano $x-y$ para cada altura.  
+\begin{figure}
+	\centering
+	%Ruta
+	\includegraphics[width=1\textwidth]{./files/TFM/CAP02/figures/thetaqpCortePALM.png}
+	% caption
+	\caption[]{Ejemplo de las gráficas entregadas por PALM. Temperatura potencial (izquierda), presión (centro), humedad especifica (derecha).}
+	\label{fig:PALMthetaqp}
+\end{figure} 
+
+La Fig.~\ref{fig:PALMthetaCorte} muestra un corte en el plano $x-y$ para $\theta$ en 160 m de altura después de 12 horas de dinámica atmosférica.
+\begin{figure}
+	\centering
+	%Ruta
+	\includegraphics[width=0.8\textwidth]{./files/TFM/CAP02/figures/thetaCortePALM.png}
+	% caption
+	\caption[]{Corte en el plano x-y de la temperatura potencial ($\theta$), a 160 m de altura y 12 horas de dinámica atmosférica.}
+	\label{fig:PALMthetaCorte}
+\end{figure} 
+
+Siguiendo el procedimiento explicado en la Sección~\ref{subsec:cn2calculo} y con los parámetros necesarios, determinados con las simulaciones hechas en PALM, se hace el cálculo de $C_n^2$. La Fig.~\ref{fig:cn2ct2cq2ctq} muestra el resultado del cálculo de los parámetros estructurales que definen la atmósfera local de Villa de Leyva. 
+\begin{figure}
+	\centering
+	%Ruta
+	\includegraphics[width=1\textwidth]{./files/TFM/CAP02/figures/cn2.png}
+	% caption
+	\caption[]{Curvas de los parámetros estructurales de la atmósfera de Villa de Leyva. $C_n^2$, $A^2C_T^2$, $B^2C_q^2$ y $(2AB)C_{Tq}$.}
+	\label{fig:cn2ct2cq2ctq}
+\end{figure}
+
+En la Fig.~\ref{fig:cn2ct2cq2ctq} puede verse como el parámetro que mas aporta al $C_n^2$ es el factor $A^2C_T^2$, con pequeñas aportaciones de los otros dos factores, este tipo de resultados han sido reportados por~\cite{wilson2012direct, basu2015simple}. Como era de esperar, en los primeros metros es donde el parámetro $C_n^2$ tiene un valor mas alto y por tanto es allí donde se tiene la mayor turbulencia.

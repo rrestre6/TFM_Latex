@@ -1,6 +1,6 @@
 
 \tiny
-\begin{lstlisting}[language=Matlab, caption={Rutina para simular la propagación de la luz}, captionpos=b, label=Propanexo2]
+\begin{lstlisting}[language=Matlab, caption={Rutina para simular la propagación de la luz.}, captionpos=b, label=Propanexo2]
 %------------------------------------------------------------------------------
 %% atmos_setup
 
@@ -16,7 +16,7 @@ D1 = wvl*Dz / DROI;    % width of central lobe [m]
 R = Dz; % wavefront radius of curvature [m]
 
 % atmospheric properties
-Cn2 = 0.5e-15; It is a mean over air column % structure parameter [m^-2/3]
+Cn2 = 1e-15; It is a average over air column % structure parameter [m^-2/3]
 % SW and PW coherence diameters [m]
 r0sw = (0.423 * k^2 * Cn2 * 3/8 * Dz)^(-3/5);
 r0pw = (0.423 * k^2 * Cn2 * Dz)^(-3/5);

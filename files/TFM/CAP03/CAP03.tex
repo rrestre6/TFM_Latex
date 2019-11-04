@@ -94,11 +94,11 @@ Los resultados del algoritmo de propagación se muestra en la Fig.~\ref{fig:propA
 	%Ruta
 	\includegraphics[width=0.8\textwidth]{./files/TFM/CAP03/figures/prop.png}
 	% caption
-	\caption[]{Resultados de la simulación del algoritmo de propagación. (a) Amplitud y (b) fase de haz puntual propagado sin atmósfera. (c) Amplitud y (d) fase de haz puntual propagado a través de la atmósfera. El circulo rojo representa la apertura del telescopio}
+	\caption[]{Resultados de la simulación del algoritmo de propagación. (a) Amplitud [U.A.] y (b) fase [$-\pi$ a $\pi$ rad] de haz puntual propagado sin atmósfera. (c) Amplitud [U.A.] y (d) fase [$-\pi$ a $\pi$ rad] de haz puntual propagado a través de la atmósfera. El circulo rojo representa la apertura del telescopio}
 	\label{fig:propAtmo}
 \end{figure} 
 
-La rutina principal realizada en Matlab, que llama las funciones para simular la propagación de la luz a través de la atmósfera, es mostrada en el Apéndice~\ref{anexo:02}. Los parámetros principales en la simulación fueron: longitud de onda ($550$ $nm$), distancia de propagación ($20$ $km$), diámetro del telescopio ($9.25"$), Numero-$f$ ($f/10$).
+La rutina principal realizada en Matlab, que llama las funciones para simular la propagación de la luz a través de la atmósfera, es mostrada en el Apéndice~\ref{anexo:02}. Los parámetros principales en la simulación fueron: longitud de onda ($550$ $nm$), distancia de propagación ($20$ $km$), diámetro del telescopio ($9.25"$), Numero-$f$ ($f/10$) y $C_n^2 \sim 10^{-15}$.
 
 Por otro lado, el resultado necesario para simular la degradación de las imágenes en los diferentes estados de polarización del Sol, es la PSF del sistema óptico incluida la atmósfera. La Fig.~\ref{fig:PSFatmo} muestra tres curvas, la representación de la PSF del telescopio limitado por difracción (azul), la PSF aberrada por la atmósfera (rojo) y el ajuste a una gaussiana de la curva aberrada de la atmósfera (negro).
 \begin{figure}
