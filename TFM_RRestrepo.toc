@@ -7,7 +7,7 @@
 \contentsline {section}{\numberline {2.1}Modelo de turbulencia de Kolmogorov}{8}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Par\'ametro estructural de \IeC {\'\i }ndice de refracci\'on $C_{n}^{2}$}{10}{subsection.2.1.1}
 \contentsline {section}{\numberline {2.2}Simulaci\'on atmosf\'erica usando LES}{11}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Fundamentos de LES y Software PALM}{11}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.1}Fundamentos de LES y Software PALM}{12}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Resultados de las simulaciones atmosf\'ericas}{14}{subsection.2.2.2}
 \contentsline {chapter}{\numberline {3}Propagaci\'on de la luz en medios inhomog\'eneos}{19}{chapter.3}
 \contentsline {section}{\numberline {3.1}Algoritmo de espectro angular para la propagaci\'on de la luz en la atm\'osfera}{20}{section.3.1}
@@ -16,16 +16,19 @@
 \contentsline {section}{\numberline {3.4}Funci\'on de transferencia \'optica (OTF) y funci\'on de punto esparcido (PSF)}{24}{section.3.4}
 \contentsline {section}{\numberline {3.5}Resultados}{25}{section.3.5}
 \contentsline {chapter}{\numberline {4}Espectro-polarimetr\IeC {\'\i }a Solar}{29}{chapter.4}
-\contentsline {section}{\numberline {4.1}Secci\'on 1}{30}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Subsecci\'on 1}{30}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Subsecci\'on 2}{30}{subsection.4.1.2}
-\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{31}{chapter.5}
-\contentsline {section}{\numberline {5.1}Conclusiones generales}{31}{section.5.1}
-\contentsline {section}{\numberline {5.2}Conclusiones por cap\IeC {\'\i }tulo}{32}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Simulaci\'on de las turbulencias atmosf\'ericas}{32}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Propagaci\'on de la luz en medios inhomog\'eneos}{33}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Espectro-polarimetr\IeC {\'\i }a Solar}{33}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}Trabajo futuro}{34}{section.5.3}
-\contentsline {chapter}{Bibliograf\'{\i }a}{35}{chapter*.16}
-\contentsline {chapter}{\numberline {A}Configuraci\'on PALM}{39}{appendix.Alph1}
-\contentsline {chapter}{\numberline {B}Rutina de simulaci\'on de la propagaci\'on de la luz}{43}{appendix.Alph2}
+\contentsline {section}{\numberline {4.1}Campo magn\'etico del Sol}{31}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Regiones activas}{33}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}El campo magn\'etico y la polarizaci\'on de la luz}{33}{section.4.2}
+\contentsline {section}{\numberline {4.3}Resultados}{34}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Reconstrucci\'on de los par\'ametros de Stokes}{34}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Reconstrucci\'on del magnetograma}{34}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{35}{chapter.5}
+\contentsline {section}{\numberline {5.1}Conclusiones generales}{35}{section.5.1}
+\contentsline {section}{\numberline {5.2}Conclusiones por cap\IeC {\'\i }tulo}{36}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Simulaci\'on de las turbulencias atmosf\'ericas}{36}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Propagaci\'on de la luz en medios inhomog\'eneos}{37}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Espectro-polarimetr\IeC {\'\i }a Solar}{37}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Trabajo futuro}{38}{section.5.3}
+\contentsline {chapter}{Bibliograf\'{\i }a}{39}{chapter*.16}
+\contentsline {chapter}{\numberline {A}Configuraci\'on PALM}{43}{appendix.Alph1}
+\contentsline {chapter}{\numberline {B}Rutina de simulaci\'on de la propagaci\'on de la luz}{47}{appendix.Alph2}

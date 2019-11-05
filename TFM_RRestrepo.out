@@ -14,16 +14,19 @@
 \BOOKMARK [1][-]{section.3.4}{Funci\363n de transferencia \363ptica \(OTF\) y funci\363n de punto esparcido \(PSF\)}{chapter.3}% 14
 \BOOKMARK [1][-]{section.3.5}{Resultados}{chapter.3}% 15
 \BOOKMARK [0][-]{chapter.4}{Espectro-polarimetr\355a Solar}{}% 16
-\BOOKMARK [1][-]{section.4.1}{Secci\363n 1}{chapter.4}% 17
-\BOOKMARK [2][-]{subsection.4.1.1}{Subsecci\363n 1}{section.4.1}% 18
-\BOOKMARK [2][-]{subsection.4.1.2}{Subsecci\363n 2}{section.4.1}% 19
-\BOOKMARK [0][-]{chapter.5}{Conclusiones y trabajo futuro}{}% 20
-\BOOKMARK [1][-]{section.5.1}{Conclusiones generales}{chapter.5}% 21
-\BOOKMARK [1][-]{section.5.2}{Conclusiones por cap\355tulo}{chapter.5}% 22
-\BOOKMARK [2][-]{subsection.5.2.1}{Simulaci\363n de las turbulencias atmosf\351ricas}{section.5.2}% 23
-\BOOKMARK [2][-]{subsection.5.2.2}{Propagaci\363n de la luz en medios inhomog\351neos}{section.5.2}% 24
-\BOOKMARK [2][-]{subsection.5.2.3}{Espectro-polarimetr\355a Solar}{section.5.2}% 25
-\BOOKMARK [1][-]{section.5.3}{Trabajo futuro}{chapter.5}% 26
-\BOOKMARK [0][-]{chapter*.16}{Bibliograf\355a}{}% 27
-\BOOKMARK [0][-]{appendix.Alph1}{Configuraci\363n PALM}{}% 28
-\BOOKMARK [0][-]{appendix.Alph2}{Rutina de simulaci\363n de la propagaci\363n de la luz}{}% 29
+\BOOKMARK [1][-]{section.4.1}{Campo magn\351tico del Sol}{chapter.4}% 17
+\BOOKMARK [2][-]{subsection.4.1.1}{Regiones activas}{section.4.1}% 18
+\BOOKMARK [1][-]{section.4.2}{El campo magn\351tico y la polarizaci\363n de la luz}{chapter.4}% 19
+\BOOKMARK [1][-]{section.4.3}{Resultados}{chapter.4}% 20
+\BOOKMARK [2][-]{subsection.4.3.1}{Reconstrucci\363n de los par\341metros de Stokes}{section.4.3}% 21
+\BOOKMARK [2][-]{subsection.4.3.2}{Reconstrucci\363n del magnetograma}{section.4.3}% 22
+\BOOKMARK [0][-]{chapter.5}{Conclusiones y trabajo futuro}{}% 23
+\BOOKMARK [1][-]{section.5.1}{Conclusiones generales}{chapter.5}% 24
+\BOOKMARK [1][-]{section.5.2}{Conclusiones por cap\355tulo}{chapter.5}% 25
+\BOOKMARK [2][-]{subsection.5.2.1}{Simulaci\363n de las turbulencias atmosf\351ricas}{section.5.2}% 26
+\BOOKMARK [2][-]{subsection.5.2.2}{Propagaci\363n de la luz en medios inhomog\351neos}{section.5.2}% 27
+\BOOKMARK [2][-]{subsection.5.2.3}{Espectro-polarimetr\355a Solar}{section.5.2}% 28
+\BOOKMARK [1][-]{section.5.3}{Trabajo futuro}{chapter.5}% 29
+\BOOKMARK [0][-]{chapter*.16}{Bibliograf\355a}{}% 30
+\BOOKMARK [0][-]{appendix.Alph1}{Configuraci\363n PALM}{}% 31
+\BOOKMARK [0][-]{appendix.Alph2}{Rutina de simulaci\363n de la propagaci\363n de la luz}{}% 32
