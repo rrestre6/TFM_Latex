@@ -3,6 +3,7 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: TFM_RRestrepo.aux
 The style file: ./sty/astron.bst
 Database file #1: ./files/Biblio/Bib.bib
+Warning--empty booktitle in collett2005field
 Warning--empty year in www:EST
 Warning--empty year in www:GAIA
 Warning--empty year in www:ALMA
@@ -13,45 +14,45 @@ Warning--empty year in www:HST
 Warning--empty year in www:SDO
 Warning--empty year in soft:PALM
 Warning--empty year in www:JWST
-You've used 39 entries,
+You've used 47 entries,
             2251 wiz_defined-function locations,
-            694 strings with 8724 characters,
-and the built_in function-call counts, 11587 in all, are:
-= -- 1120
-> -- 402
-< -- 36
-+ -- 132
-- -- 126
-* -- 995
-:= -- 2122
+            728 strings with 9489 characters,
+and the built_in function-call counts, 14178 in all, are:
+= -- 1368
+> -- 476
+< -- 46
++ -- 162
+- -- 148
+* -- 1196
+:= -- 2566
 add.period$ -- 0
-call.type$ -- 39
-change.case$ -- 219
-chr.to.int$ -- 39
-cite$ -- 49
-duplicate$ -- 514
-empty$ -- 786
-format.name$ -- 173
-if$ -- 2184
+call.type$ -- 47
+change.case$ -- 262
+chr.to.int$ -- 47
+cite$ -- 58
+duplicate$ -- 640
+empty$ -- 988
+format.name$ -- 209
+if$ -- 2702
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 44
-newline$ -- 176
-num.names$ -- 117
-pop$ -- 254
+missing$ -- 57
+newline$ -- 213
+num.names$ -- 141
+pop$ -- 317
 preamble$ -- 1
-purify$ -- 257
+purify$ -- 308
 quote$ -- 0
-skip$ -- 370
+skip$ -- 464
 stack$ -- 0
-substring$ -- 604
-swap$ -- 92
-text.length$ -- 2
+substring$ -- 753
+swap$ -- 118
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 202
-warning$ -- 10
-while$ -- 90
+type$ -- 240
+warning$ -- 11
+while$ -- 110
 width$ -- 0
-write$ -- 431
-(There were 10 warnings)
+write$ -- 525
+(There were 11 warnings)

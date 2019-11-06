@@ -18,11 +18,24 @@ Basu, S.: 2015,
 \newblock {\em {Basic Optics for the Astronomical Sciences}},
 \newblock SPIE Press.
 
+\bibitem[\protect\astroncite{Canfield and Murdin}{2000}]{canfield2000solar}
+Canfield, R.~C. y Murdin, P.: 2000,
+\newblock {\em Encyclopedia of Astronomy and Astrophysics} {\bf 3}, 2457
+
+\bibitem[\protect\astroncite{Collett}{2005}]{collett2005field}
+Collett, E.: 2005,
+\newblock Spie Bellingham, WA
+
 \bibitem[\protect\astroncite{{Collins}}{2013}]{2013Collins}
 {Collins}, C.: 2013,
 \newblock {\em {Astronomy 101: From the Sun and Moon to Whormholes and
   Warpdrive, Key Theories, Discoveries, and Facts about the Universe}},
 \newblock USA: Adams Media.
+
+\bibitem[\protect\astroncite{Cravens}{2004}]{2004cravens}
+Cravens, T.~E.: 2004,
+\newblock {\em Physics of solar system plasmas},
+\newblock Cambridge University Press
 
 \bibitem[\protect\astroncite{EAST-EST}{}]{www:EST}
 EAST-EST,
@@ -52,6 +65,12 @@ Frederickson, P.~A., Davidson, K.~L., Zeisse, C.~R., y Bendall, C.~S.: 2000,
 Fried, D.~L.: 1965,
 \newblock {\em JoSA} {\bf 55(11)}, 1427
 
+\bibitem[\protect\astroncite{Garfinkle and Garfinkle}{2009}]{2009garfinkle}
+Garfinkle, D. y Garfinkle, R.: 2009,
+\newblock {\em Three steps to the universe: from the sun to black holes to the
+  mystery of dark matter},
+\newblock University of Chicago Press
+
 \bibitem[\protect\astroncite{Goodman}{2005}]{2005goodmanFO}
 Goodman, J.~W.: 2005,
 \newblock {\em Introduction to Fourier optics},
@@ -68,6 +87,10 @@ Granados-Hern{\'a}ndez, N.: 2019,
   Regiones Solares Activas}},
 \newblock Observatorio Astron{\'o}mico Nacional. Universidad Nacional de
   Colombia.
+
+\bibitem[\protect\astroncite{Hanslmeier}{2010}]{hanslmeier2010sun}
+Hanslmeier, A.: 2010,
+\newblock in {\em Heliophysical Processes}, pp 233--249, Springer
 
 \bibitem[\protect\astroncite{HSPF-SAMNet}{}]{www:SAMNet}
 HSPF-SAMNet,
@@ -122,6 +145,11 @@ Lane, R., Glindemann, A., Dainty, J., et al.: 1992,
 Moeng, C.-H. y Sullivan, P.~P.: 1994,
 \newblock {\em Journal of the Atmospheric Sciences} {\bf 51(7)}, 999
 
+\bibitem[\protect\astroncite{Narayanan}{2013}]{2013narayanan}
+Narayanan, A.~S.: 2013,
+\newblock {\em An introduction to waves and oscillations in the Sun},
+\newblock Springer
+
 \bibitem[\protect\astroncite{NASA-HST}{}]{www:HST}
 NASA-HST,
 \newblock {\em Hubble Space Telescope: \url{https://hubblesite.org/}}
@@ -163,6 +191,11 @@ Sagaut, P.: 2006,
 \newblock {\em {Numerical Simulations of Optical Wave Propagation}},
 \newblock SPIE Press.
 
+\bibitem[\protect\astroncite{Stix}{2012}]{2012stix}
+Stix, M.: 2012,
+\newblock {\em The Sun: an introduction},
+\newblock Springer Science \& Business Media
+
 \bibitem[\protect\astroncite{STScI-JWST}{}]{www:JWST}
 STScI-JWST,
 \newblock {\em Jammes Webb Space Telescope: \url{http://www.stsci.edu/jwst/}}
@@ -181,6 +214,11 @@ Tatarski, V.~I.: 2016,
 {Toro-Iniesta}, J.~C.: 2003,
 \newblock {\em {Introduction to Spectropolarimetry}},
 \newblock Cambridge University Press.
+
+\bibitem[\protect\astroncite{Vaquero and V{\'a}zquez}{2009}]{2009vaquero}
+Vaquero, J.~M. y V{\'a}zquez, M.: 2009,
+\newblock {\em The Sun recorded through history}, Vol. 361,
+\newblock Springer Science \& Business Media
 
 \bibitem[\protect\astroncite{{Vita-Finzi}}{2008}]{2008VitaFinzi}
 {Vita-Finzi}, C.: 2008,
