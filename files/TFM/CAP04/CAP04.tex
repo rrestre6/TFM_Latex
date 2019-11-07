@@ -93,7 +93,7 @@ En general, un campo magnético tiene una inclinación y un angulo azimutal respec
 \end{pmatrix}
 .
 \end{equation}
-Los términos de las diagonales de la Eq.~\ref{unno} representan el fenómeno de absorción, los términos de simetría en la matriz corresponden al dicroísmo y los elementos no simétricos, que en este caso son cero, corresponden a la dispersión y esparcimiento, los últimos se consideran cuando se analizan atmósferas Solares con campos magnéticos complejos de estructuras muy particulares~\cite{2003ToroIniesta}. Finalmente, los términos de la matriz están definidos por
+Los términos de las diagonales de la Eq.~\ref{eq:unno} representan el fenómeno de absorción, los términos de simetría en la matriz corresponden al dicroísmo y los elementos no simétricos, que en este caso son cero, corresponden a la dispersión y esparcimiento, los últimos se consideran cuando se analizan atmósferas Solares con campos magnéticos complejos de estructuras muy particulares~\cite{2003ToroIniesta}. Finalmente, los términos de la matriz están definidos por
 \begin{align}\label{eq:stokeseta}
 \eta_I&=\frac{1}{2}\eta~\textrm{sen}^2\gamma+\frac{1}{4}(\eta^{+}+\eta^{-})(1+\textrm{cos}^2\gamma), \\
 \eta_Q&=\Big[\frac{1}{2}\eta-\frac{1}{4}(\eta^{+}+\eta^{-})\Big]\textrm{sen}^2\gamma~\textrm{cos}2\varphi, \nonumber \\
@@ -108,12 +108,90 @@ La atmósfera Solar no es una capa ópticamente delgada, ni es solamente un medio 
 \end{equation}
 donde, $\mathbf{B}_{\lambda} \equiv (B_{\lambda},0,0,0)$ y representa la función de Kirchhoff-Planck, que depende de la temperatura y la longitud de onda, $S$ es el vector de Stokes, $\tau$ es la profundidad óptica y $\vartheta$ es el ángulo de la dirección vertical local.
 
-Existen ciertos casos especiales, como por ejemplo, campo magnético longitudinal o transversal, campo magnético débil, etc, en los cuales las ecuaciones de Unno (Eq.~\ref{eq:stokeseta} y Eq.~\ref{eq:EQtrans}) pueden ser solucionadas analíticamente, o reducirse para evaluar unas integrales asociadas y así encontrar el campo magnético. En estos casos, se considera una capa de absorción óptica delgada y por tanto, tenemos el tratamiento matemático descrito antes. En cualquier caso, es necesario un modelo de atmósfera Solar, es decir, modelos de $T(\tau)$ y $B_{\lambda}(\tau)$. De forma general, para una matriz arbitraria de capa absorción óptica dependiente del espesor, las ecuaciones de Unno tienen que ser solucionadas a través de métodos numéricos iterativos. En estos, el procedimiento es encontrar la magnitud y dirección del campo magnético en la atmósfera Solar, variando los elementos de la matriz de absorción y luego resolviendo la Eq.~\ref{eq:stokeseta}, si los perfiles de los parámetros de Stokes que emergen de los cálculos, se corresponden con cierto grado de error pequeño a los parámetros de Stokes observados (medidos), se puede concluir que el campo ha sido determinado, sino, se varían otra vez los elementos de la matriz de absorción y se repite el procedimiento~\cite{2012stix, 2003ToroIniesta}
+Existen ciertos casos especiales, como por ejemplo, campo magnético longitudinal o transversal, campo magnético débil, etc, en los cuales las ecuaciones de Unno (Eq.~\ref{eq:stokeseta} y Eq.~\ref{eq:EQtrans}) pueden ser solucionadas analíticamente, o reducirse para evaluar unas integrales asociadas y así encontrar el campo magnético. En estos casos, se considera una capa de absorción óptica delgada y por tanto, tenemos el tratamiento matemático descrito antes. En cualquier caso, es necesario un modelo de atmósfera Solar, es decir, modelos de $T(\tau)$ y $B_{\lambda}(\tau)$. De forma general, para una matriz arbitraria de capa absorción óptica dependiente del espesor, las ecuaciones de Unno tienen que ser solucionadas a través de métodos numéricos iterativos. En estos, el procedimiento es encontrar la magnitud y dirección del campo magnético en la atmósfera Solar, variando los elementos de la matriz de absorción y luego resolviendo la Eq.~\ref{eq:stokeseta}, si los perfiles de los parámetros de Stokes que emergen de los cálculos, se corresponden con cierto grado de error pequeño a los parámetros de Stokes observados (medidos), se puede concluir que el campo ha sido determinado, sino, se varían otra vez los elementos de la matriz de absorción y se repite el procedimiento~\cite{2012stix, 2003ToroIniesta}.
 
 Los magnetogramas son los mapas reconstruidos de la distribución e intensidad de regiones con campo magnético. En un magnetograma por convención se observan las zonas neutras en color gris, el campo magnético que se aleja del observador está en distintos tonos de negro y el que apunta hacia el observador en tonos de blanco, debido a que son imágenes de información magnética, las manchas solares pueden aparecer blancas o negras dependiendo de su polaridad~\cite{man:2019Granados}.
 
-
 \section{Resultados}\label{sec:3cap4}
+Como se puede inferir de la Eq.~\ref{eq:stokescomplejo} y Eq.~\ref{eq:stokes}, los parámetros de Stokes se extraen a partir de medidas de intensidad adquiridas en diferentes estados de polarización, y son estas las que se deben convolucionar con la PSF calculada del análisis de la atmósfera y la propagación de la luz a través de esta. Como es de esperarse, tendremos un nuevo conjunto de imágenes donde su resolución espacial se ha visto afectada, con estas reconstruimos otra vez los parámetros de Stokes, este procedimiento es la primera parte de los resultados de este Capítulo. En la segunda parte, usando los parámetros de Stokes reconstruidos y las explicaciones dadas en la sección anterior, se construye el magnetograma. 
+
+La información del Sol que quiere ser analizada, proviene del satélite Solar Dynamics Obserbatory (SDO), particularmente del instrumento Helioseismic and Magnetic Imager (HMI). El principal objetivo de investigación de HMI, es estudiar el origen de la variabilidad Solar, así como entender y caracterizar el interior del Sol y las tres componentes de la actividad magnética~\cite{www:SDO}, con el fin de establecer relaciones mas finas entre la dinámica interna y la actividad magnética. HMI hace medidas de polarización en una linea espectral especifica para estudiar las componentes del campo magnético fotosferico. Las imágenes de la Fig.~\ref{fig:HMI} muestra las especificaciones del instrumento, los parámetros de funcionamiento y las curvas espectrales sobre la línea de medida.
+
+\begin{figure}
+	\centering
+	%Ruta
+	\includegraphics[width=1\textwidth]{./files/TFM/CAP04/figures/HMI.png}
+	% caption
+	\caption[]{Características del instrumento HMI~\cite{www:SDO}. Curvas espectrales sobre la línea de medida (superior), especificaciones del instrumento (izquierda) y parámetros de funcionamiento (derecha).}
+	\label{fig:HMI}
+\end{figure}
+
 \subsection{Reconstrucción de los parámetros de Stokes}
+La información descargada de los servidores de SDO fue, el mapa de cada uno de los elementos del vector de Stokes, en las 6 longitudes de onda que definen la linea espectral de análisis y el mapa de intensidad continua. La descarga de los datos se hizo usado \textit{Python} y las librerías \textit{Astropy} y \textit{Sunpy}. El Código~\ref{HMIdownload} muestra una rutina para descargar los datos de la imagen de intensidad continua. Principalmente, se define el instrumento, en que periodo de tiempo se buscan los datos, la secuencia o muestra de los datos y el tipo de datos. 
+
+Como la información descargada de los servidores son los parámetros de Stokes, estos se deben ser convertidos primero a imagnes de intensidad polarizadas, para esto usaremos las conversiones mostradas en la Eq.~\ref{eq:stokesimages}, siguiendo el procedimiento de~\cite{collett2005field}. $I_{x}(\varsigma,\epsilon)$ es la intensidad en el estado $x$  de polarización, $\varsigma$ como el angulo de trasmisión del campo respecto a la horizontal y $\epsilon$ el desfase entre componentes.
+\begin{align}\label{eq:stokesimages}
+&I_{H}(0,0)=\frac{I+Q}{2}, \\
+&I_{V}(\pi/2,0)=\frac{I-Q}{2}, \nonumber \\
+&I_{+45}(\pi/4,0)=\frac{I+U}{2}, \nonumber \\
+&I_{+circ}(\pi/4,\pi/2)=\frac{I-V}{2}, \nonumber
+\end{align}
+donde, $I_{H}$ es la intensidad con iluminación polarizada linealmente horizontal, $I_{V}$ es la intensidad con iluminación polarizada linealmente vertical, $I_{+45}$ es la intensidad con iluminación polarizada linealmente a +45 y $I_{+circ}$ es la intensidad con iluminación polarizada circularmente hacia la derecha.
+
+\tiny
+\begin{lstlisting}[language=Python, caption={Rutina para descargar los datos de HMI. Ejemplo de descarga de la intensidad continua.}, captionpos=b, label=HMIdownload]
+
+import astropy.units as u
+import matplotlib.pyplot as plt
+import sunpy.map
+from sunpy.net import Fido, attrs as a
+
+result = Fido.search(a.Time('2019/03/22T23:00:00', '2019/03/22T23:59:00'),
+                     a.Instrument('hmi'),
+                     a.Sample(720*u.s),
+                     a.vso.Physobs('INTENSITY'))
+                     
+print(result)
+
+downloaded_file = Fido.fetch(result[0, 0])
+print(downloaded_file)
+\end{lstlisting}
+\vspace{-0.2cm}
+\normalsize
+
+La Fig.~\ref{fig:convolucion} muestra $I_{+circ}$ después de aplicar la Eq.~\ref{eq:stokesimages}, con los efectos de la atmósfera a la izquierda y sin los efectos de esta a la derecha. Se evidencia una perdida de resolución en todo el disco Solar y en la ampliación de una mancha Solar mostrada en el recuadro rojo los detalles de esta se han sufrido un emborronamiento, y las estructuras mas finas, aparentemente granulación, se han perdido por completo.
+
+\begin{figure}
+	\centering
+	%Ruta
+	\includegraphics[width=1\textwidth]{./files/TFM/CAP04/figures/Convolucion.png}
+	% caption
+	\caption[]{Imagen de polarizada circularmente a la derecga con los efectos de la atmósfera (Izquierda) y sin oos efecto de esta (derecha). La barra de intensidad esta en niveles de gris.}
+	\label{fig:convolucion}
+\end{figure}
+ 
+La convolución se ha hecho empleando transformadas de Fourier y la teoría de sistemas lineales e invariantes al desplazamiento~\cite{2005goodmanFO}, tal que,
+\begin{equation}\label{eq:convolucion}
+I_{+circ}^{Atm}=\mathcal{F}^{-1}\{\mathcal{F}[I_{+circ}]\mathcal{F}[PSF]\}.
+\end{equation}
+ 
+Haciendo el proceso inverso que el aplicado en la Eq.~\ref{eq:stokesimages}, es decir reconstruyendo los parámetros de Stokes, tal que,
+\begin{align}\label{eq:imagesstokes}
+&I=I_{H}(0,0)+I_{V}(\pi/2,0), \\
+&Q=I_{H}(0,0)-I_{V}(\pi/2,0), \nonumber \\
+&U=2I_{+45}(\pi/4,0)-I, \nonumber \\
+&I=I-2I_{+circ}(\pi/4,\pi/2), \nonumber
+\end{align} 
+se obtienen los resultados mostrados en la Fig.~\ref{fig:imagesstokes}.
+
+\begin{figure}
+	\centering
+	%Ruta
+	\includegraphics[width=1\textwidth]{./files/TFM/CAP04/figures/Stokes.png}
+	% caption
+	\caption[]{Reconstrucción de los parámetros de Stokes.}
+	\label{fig:imagesstokes}
+\end{figure}
+ 
 \subsection{Reconstrucción del magnetograma}
 
