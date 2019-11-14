@@ -9,6 +9,12 @@ Andrews, L.~C. y Phillips, R.~L.: 2005,
 \newblock {\em Laser beam propagation through random media}, Vol. 152,
 \newblock SPIE press Bellingham, WA
 
+\bibitem[\protect\astroncite{Asensio-Ramos}{}]{soft:Hazel}
+Asensio-Ramos, A.,
+\newblock {\em {\textsc{an acronym for HAnle and ZEeman Light. Hazel v2.0}
+  \url{https://aasensio.github.io/hazel2/index.html} bajo licencia GNU General
+  Public License V3}}
+
 \bibitem[\protect\astroncite{Basu}{2015}]{basu2015simple}
 Basu, S.: 2015,
 \newblock {\em Optics letters} {\bf 40(17)}, 4130
